@@ -1,0 +1,140 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[bahasa]{babel}
+\usepackage{amsmath}
+\usepackage{breqn}
+
+\usecolortheme{beaver}
+\title{Bilangan Kompleks}
+\author{@btatmaja\\Dept. of Engineering Physics \\ Institut Teknologi Sepuluh Nopember}
+\date{\today}
+\begin{document}
+	\frame{\titlepage}
+	\frame{
+		\frametitle{Table of Contents}
+		\tableofcontents
+	}
+
+\section{0. Bilangan}
+\begin{frame}[t,fragile]{Bilangan}
+\begin{itemize}
+\item Bilangan Real
+\begin{itemize}
+\item Bil. Asli, $1, 2, 3, ...$ \vskip10pt
+\item Bil. Bulat, $...,-2,-1,0,1,2,...$ \vskip5pt
+\item Bil. Rasional, $\cfrac{1}{2}, \cfrac{1}{3},\cfrac{2}{5}, ...$ \vskip10pt
+\item Bil. Irasional, $\sqrt{2}, \sqrt{3}, \sqrt{5}$ \vskip10pt
+\end{itemize}
+\item Bilangan Kompleks \\
+\hskip10pt $z=a+bi$
+\end{itemize}
+\end{frame}
+
+\section{1. Bentuk kutub dari bilangan kompleks}
+\begin{frame}[t, fragile]{Bilangan Kompleks}
+\begin{center}
+\fbox{\huge{$Z = a + bi$}}
+\end{center}
+\vskip10pt
+\begin{itemize}
+\item $i=\sqrt{-1}$ (satuan imaginer)
+\item $i^2 = -1$
+\item a bagian real dari z, ditulis  Re z =a
+\item b bagian imaginer dari z, ditulis, Im z =b
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t, fragile]{Bilangan Kompleks}
+Diberikan dua bilangan kompleks: $Z_1=a+bi$\\
+                     \hskip160pt $Z_2=c+di$, maka:
+\vskip10pt
+\begin{enumerate}
+\item $z_1+z_2 = (a+bi) + (c+di) = (a+c) + (b+d)i$
+\item $z_1-z_2 = (a+bi) - (c+di) = (a-c) + (b-d)i$
+\item $z_1 z_2 = (a+bi) (c+di) = (ac-bd) + (ad + bc)i$
+\item $\cfrac{z_1}{z_2}= \cfrac{a+bi}{c+di}=\cfrac{ac+bd}{c^2+d^2} + \cfrac{(bc - ad)i}{c^2+d^2}$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t, fragile]{Bentuk kutub dari bilangan kompleks}
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[width=2in]{pict/kompleks1.png}
+\column{.5\textwidth}
+Bidang XOY = bidang kompleks \\
+$z = a + bi \rightarrow r=\sqrt{x^2+y^2}$ \\
+r disebut modulus dari nilai z atau \\
+Nilai mutlak dari z, ditulis $|z|$ \\
+$\sin \theta=\cfrac{b}{r} \longrightarrow$  \hskip10pt $\theta$ disebut \\
+$\cos \theta=\cfrac{a}{r}$  \hskip30pt argumen dari z\\
+\end{columns}
+\begin{center}
+    $z=a+bi \rightarrow$ \fbox{$z=r(\cos \theta + i \sin \theta)$}
+\end{center}
+\begin{exampleblock}{Soal:}
+Nyatakan $z =  1 + \sqrt{3} i$  ke dalam bentuk kutub
+\end{exampleblock}
+\end{frame}
+
+\section{2. Conjugate}
+\begin{frame}[t, fragile]{Conjugate}
+Conjugate dari $z=a+bi$ ialah \underline{$\bar{z}=a-bi$}\\
+\vskip5pt
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}
+\item $z=a+bi$
+\item $\bar{z}=\overline{a+bi}$
+\item $z_1=a+bi$
+\item $z_2=c+di$
+\end{itemize}
+\column{.5\textwidth}
+\begin{enumerate}
+\item $\bar{\bar{z}}=z$
+\item $z.\bar{z}=|z|^2=|\bar{z}|^2$
+\item $\overline{z_1\pm z_2}=\bar{z_1}\pm \bar{z_2}$
+\item $\overline{z_1 z_2} = \bar{z_1} . \bar {z_2}$
+\item $\overline{\frac{z_1}{z_2}} = \frac{\bar{z_1}}{\bar{z_2}}$
+\end{enumerate}
+\end{columns}
+Jika: \\ 
+\hskip30pt \fbox{$ z_1=r_1(\cos \theta_1+i \sin \theta_1)$ dan $z_2=r_2(\cos \theta_2+i \sin \theta_2$ )}\\
+maka:\\
+\begin{enumerate}
+\item $z_1 z_2 = r_1 r_2[\cos (\theta_1+\theta_2) + i \sin (\theta_1+\theta_2)]$
+\item $\cfrac{z_1}{z_2}=\cfrac{r_1}{r_2} \bigl[{\cos (\theta_1-\theta_2) + i \sin (\theta_1-\theta_2)}\bigr]$
+\end{enumerate}
+\end{frame}
+
+\section{3. Teorema De Moivre}
+\begin{frame}[t, fragile]{Teorema De Moivre}
+Abraham De Moivre (1667-1754) menyatakan untuk setiap bilangan rasional n berlaku:\\
+\vskip10pt
+\hskip10pt \fbox{$[r (\cos \theta + i \sin \theta)]^n = r^n (\cos (n\theta) + i \sin (n\theta))$}
+\vskip10pt
+Jika r=1 maka,
+\vskip10pt
+\hskip10pt \fbox{$(\cos \theta + i \sin \theta)^n = \cos (n\theta) + i \sin (n\theta)$}
+\vskip10pt
+\begin{exampleblock}{Contoh}
+Dapatkan nilai dari $(\sqrt{3}+i)^6$
+\end{exampleblock}
+\end{frame}
+
+\section{4. Penarikan Akar}
+\begin{frame}[t, fragile]{Penarikan akar}
+\begin{itemize}
+\item a + bi = r $(\cos \theta + i \sin \theta)$ \\
+Karena 
+\begin{align}
+     \sin \theta& = \sin (\theta + k.360^o) \rightarrow  k= bil. bulat \\
+     \cos \theta& = \cos (\theta + k.360^o) 
+\end{align}
+\item maka: a + bi = $r [\cos(\theta + k.360^o) + i \sin(\theta+ k.360^o)]$
+\item Jika $z^n = a + bi \rightarrow z_{1,2,3,..,n}= \sqrt[n]{a+bi} = ....?$
+\item Penyelesaiannya:
+\end{itemize}
+\hskip22pt \fbox{$z_{1,2,3,...,n}=r^{\frac{1}{n}}\biggl[\cos{\dfrac{\theta+k.360^o}{n}} + i \sin{\dfrac{\theta+k.360^o}{n}} \biggr]$}
+\end{frame}
+
+\end{document}

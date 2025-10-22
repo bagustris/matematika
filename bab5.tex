@@ -1,0 +1,145 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[bahasai]{babel}
+\title{Aljabar Vektor}
+\author{@btatmaja\\Institut Teknologi Sepuluh Nopember}
+\date{\today}
+\begin{document}
+	\frame{\titlepage}
+	\frame{
+		\frametitle{Table of Contents}
+		\tableofcontents
+	}
+
+\section{Besaran vektor}
+\begin{frame}[t,fragile]{Besaran Vektor}
+\begin{block}{Besaran}
+\end{block}
+\begin{itemize}
+\item Vektor: Kuantiti yang memiliki besar dan arah \\
+Contoh: kecepatan, percepatan, gaya.
+\item Skalar: Kuantiti yang hanya memiliki besar saja.\\
+Contoh: waktu, temperatur, massa, panjang.
+\end{itemize}
+\includegraphics[width=1.8in]{pict/vektor.png}
+$\overrightarrow{AB} = \vec{a}; ~|\vec{a}| = a =$ panjang vektor $\vec{a}$
+\end{frame}
+
+\section{Dua vektor sama}
+\begin{frame}[t, fragile]{Dua vektor sama}
+$\vec{a} = \vec {b} \Longrightarrow $ searah, sama panjang \\
+\begin{center}
+\includegraphics[width=4in]{pict/duavektor.png} \\
+\end{center}
+$\overrightarrow{-a}$, sama panjang tetapi berlawanan arah dengan $\vec{a}$
+\end{frame}
+
+\section{Jumlah dua vektor: $\vec{a} + \vec{b}$}
+\begin{frame}[t, fragile]{Jumlah dua vektor: $\vec{a} + \vec{b}$}
+$\longrightarrow \vec{b}$ dimulai dari ujung vektor $\vec{a}$, vektor $\vec{b} ~\# ~\vec{a}$, lalu hubungkan pangkal $\vec{a}$ dengan ujung $\vec{b}$ tsb.
+\begin{center}
+\includegraphics[width=4in]{pict/jumlahvektor} \\
+\end{center}
+\begin{center}
+\fbox{$\vec{a}+\vec{b}=\vec{b}+\vec{a}$}
+\end{center}
+\end{frame}
+
+\section{Selisih dua vektor: $\vec{a} - \vec{b}$}
+\begin{frame}[t, fragile]{Selisih dua vektor: $\vec{a} - \vec{b}$}
+$$ \vec{a} - \vec {b} = \vec{a} + (-\vec{b}) = \vec{a}~~ ditambah~~ -\vec{b}$$
+\begin{center}
+\includegraphics[width=4in]{pict/selisihvektor} \\
+\end{center}
+\begin{center}
+Jika $\vec{a}=\vec{b} \Longrightarrow \vec{a}-\vec{b}=\vec{0}$ \\
+Vektor nol, panjang nol, arah tak didefinisikan
+\end{center}
+\end{frame}
+
+\section{Vektor satuan}
+\begin{frame}[t, fragile]{Vektor Satuan}
+Vektor satuan $\vec{i}$: Vektor dari titik (0,0) sampai titik (1,0).\\
+Vektor satuan $\vec{j}$: Vektor dari titik (0,0) sampai titik (0,1).\\
+\begin{center}
+\includegraphics[width=3in]{pict/unitVektor.png}
+\end{center}
+$\vec{a}=a_1 \vec{i} + a_2 \vec{j}$, Contoh: $\vec{a}=3i+2j$
+\begin{center}
+\includegraphics[width=1.4in]{pict/unitVektor2.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[t, fragile]{Unit vektor siku-siku}
+$|\vec{i}| = |\vec{j}|=|\vec{k}|=1$
+\begin{center}
+\includegraphics[width=4in]{pict/vektorsiku.png}
+\end{center}
+\hspace{180pt} $\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}$ \\
+Vektor posisi $\vec{r}$ dari O ke $P(x,y,z)$ adalah:\\
+$\vec{r} = x\vec{i} + y\vec{j} + z\vec{k}$ \\
+dengan panjang $r=\sqrt{x^2+y^2+z^2}; ~~a=|\vec{a}|=\sqrt{a_1^{2}+a_2^{2}+a_3^{2}}$
+\end{frame}
+
+\section{Perkalian titik (Dot product)}
+\begin{frame}[t, fragile]{Perkalian titik (Dot product)}
+%\begin{center}
+\begin{columns}
+\column{.6\textwidth}
+Definisi: \fbox{$\vec{a}.\vec{b} = ab \cos \theta$}; ~~$(0\leq\theta\leq\pi)$ \\
+\vskip3pt $\vec{a}.\vec{b} = \vec{b}.\vec{a} \Longrightarrow \vec{i}.\vec{i} =\vec{j}.\vec{j} =\vec{k}.\vec{k} =1$\\
+\vskip3pt \hskip67pt                                         $\vec{i}.\vec{j} =\vec{j}.\vec{k} =\vec{k}.\vec{i} =0$
+\column{.3\textwidth}
+\includegraphics[width=1.5in]{pict/dotproduct} \\
+\end{columns}
+\vskip5pt
+$\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k} \Longrightarrow$ \fbox{$\vec{a}.\vec{b}=a_1b_1+a_2b_2+a_3b_3$} \\
+$\vec{b}=b_1\vec{i}+b_2\vec{j}+b_3\vec{k}$ \hskip70pt skalar\\
+$$\cos \theta = \dfrac {\vec{a}\vec{b}} {ab} = \dfrac{a_1b_1+a_2b_2+a_3b_3}{\sqrt{a_1^2+a_2^2+a_3^2}.\sqrt{b_1^2+b_2^2+b_3^2}}$$
+\end{frame}
+
+\section{Perkalian silang (Cross product)}
+\begin{frame}[t, fragile] {Perkalian silang (Cross product)}
+\begin{columns}
+\column{.3\textwidth}
+\includegraphics[width=1.5in]{pict/crossProduct}
+\vskip10pt
+\fbox{$\vec{a}\times\vec{b}= -(\vec{b}\times \vec{a})$}
+\column{.65\textwidth}
+Definisi: \\
+\vskip3pt
+$\vec{a}\times\vec{b} = (ab \sin{\theta} )~\vec{a}; ~~~0\leq \theta \leq \pi$\\
+\vskip3pt
+$\theta = \angle(\vec{a}, \vec{b})$ diukur dari $\vec{a}$ ke $\vec {b}$ \\
+\vskip3pt
+$\vec{e}$ = vektor satuan $\perp$ bidangnya $\vec{a}$ dan $\vec {b}$. \\
+\end{columns}
+\vskip20pt
+$$\vec{i} \times \vec{i} = \vec{j} \times \vec{j} = \vec{k} \times \vec{k}=0$$
+$$\vec{i}\times \vec{j} =\vec{k};~~~ \vec{j}\times \vec{k} =\vec{i};~~~ \vec{k}\times\vec{i} = \vec{j};$$
+$$\vec{j}\times \vec{i} = -\vec{k};~~~ \vec{k}\times \vec{j} =-\vec{i};~~~ \vec{i}\times\vec{k} = -\vec{j};$$
+\end{frame}
+
+
+\begin{frame}[t,fragile]{Soal}
+\begin{enumerate}
+\item Diketahui vektor $\vec{a} = 3i + 4j$ dan vektor $\vec{b} = 2i + j$. Hitunglah harga-harga :
+\begin{itemize} 
+\item $\vec{a} + \vec{b}$ 
+\item $\vec b + \vec a$
+\item $\vec a ~– \vec b$
+\item $\vec b ~– \vec a$
+\item $\vec a$ 
+\item $\vec b$ 
+\item sudut $\vec a$ 
+\item sudut $\vec b$
+\item $\vec a \cdot \vec b$ 
+\item $\vec b \cdot \vec a $
+\end{itemize}
+\item Diketahui vektor-vektor $\vec a , \vec{b}$ dan $\vec{c}$ seperti di bawah ini. Lukislah secara grafis operasi vektor :$ \vec a - \vec{b} +2. \vec c$ dan $3 \vec c - 0,5(2 \vec a - \vec b )$.\\
+\centering \includegraphics[width=1.3in]{pict/soal2}
+\end{enumerate}
+
+\end{frame}
+\end{document}

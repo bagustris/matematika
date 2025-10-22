@@ -1,0 +1,249 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[bahasai]{babel}
+\usepackage{amsmath}
+
+% to continu numbering
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\resetcounteronoverlays{saveenumi}
+
+
+\title{Integral (tak tertentu)}
+\author{Bagus Tris Atmaja}
+\date{\today}
+
+\begin{document}
+	\frame{\titlepage}
+	\frame{
+		\frametitle{Table of Contents}
+		\tableofcontents
+	}
+	
+\section{Integral tertentu dan tak tertentu}
+\begin{frame}[t, fragile]{Integral tertentu dan tak tertentu}
+Integral: \\
+\begin{itemize}
+\item \underline{tak tertentu}: Jika $f(x)$ ditentukan maka setiap fungsi $F(x)$ hingga $F'(x) = f(x)$ disebut Integral tak tertentu dari $f(x)$ dituliskan $\int f(x)= F(x) + C$.\\
+\vskip5pt Contoh: $x^3, x^3-2, x^3+1$ adalah integral tak tertentu dari $f(x)=3x^2$, dituliskan $\int 3x dx= x^3 + C$
+\vskip10pt
+\item \underline{tertentu}: Jika $f(x)$ fungsi kontinyu pada $[a, b]$ maka dikatakan bahwa $f(x)$ terintegralkan (\emph{integrable}) pada $[a, b]$ dan disebut integral tertentu dan dinyatakan dengan $\int \limits_a^{b}f(x) dx$.
+\end{itemize}
+\end{frame}
+
+\section{Sifat-sifat integral tak tertentu}
+\begin{frame}[t, fragile]{Sifat-sifat integral tak tertentu}
+\begin{enumerate}
+\item \fbox{$\int kf(x)dx= k\int f(x)dx$}   dimana $k$ konstanta \\
+\vskip5pt
+Bukti: Untuk sisi kiri, $\dfrac {d \{ \int k f(x) dx \} } {dx} = k f(x)$ \\
+\hspace{30pt} Untuk sisi kanan, \\ 
+\hspace{30pt} $ \dfrac {d \{ k \int f(x) dx \} } {dx} = \dfrac {kd \{ \int f(x) dx \} } {dx}=k f(x)$ 
+\item \fbox{$ \int \{ f(x) \pm g(x) \} dx = \int f(x) dx \pm \int g(x) dx $} \\
+\vskip5pt
+Bukti: Untuk sisi kiri, $ \dfrac {d \bigl[\int \{ f(x) \pm g(x) \} dx \bigr]} {dx} = f(x) \pm g(x) $ \\
+\hspace{30pt} Untuk sisi kanan, \\
+\vskip5pt
+ $ \dfrac {d \bigl[\int f(x) dx \pm \int g(x) dx \bigr]} {dx} = \dfrac {d \int f(x) dx}{dx} \pm \dfrac {d \int g(x)}{dx}$\\
+ $\hspace{118pt} = f(x) \pm g(x) $
+\end{enumerate}
+\end{frame}
+
+\section{Beberapa rumus integral tak tertentu}
+\begin{frame}[t, fragile]{Beberapa rumus integral tak tertentu[1]}
+\begin{enumerate}
+\item $\int 0 dx= C$
+\item $\int x^n dx= \dfrac{1}{n+1} x^{n+1} +C;~~(n\neq -1)$
+\item $\int \dfrac{1}{x} dx = \ln |x| + C$
+\item $\int e^xdx = e^x + C$
+\item $\int a^x dx = \dfrac {a^x} {\ln x} + C$
+\item $\int \sin x dx = - \cos x + C$
+\item $\int \cos x dx = \sin x + C$
+\item $\int \tan x dx = \ln | \sec x | + C$
+\item $\int \cot x dx = \ln | \sin x | + C$
+\item $\int \sec x dx = \ln | \sec x + \tan x | + C$
+\item $\int \csc x dx = \ln | \csc x - \cot x| + C$
+\seti
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t, fragile]{Beberapa rumus integral tak tertentu[2]}
+\begin{enumerate}
+\conti
+\item $\int \sec ^2 x dx = \tan x +C$
+\item $\int \csc ^2 x dx = - \cot x + C$
+\item $\int \sinh x dx= \cosh x + C$
+\item $\int \cosh x dx= \sinh x + C$
+\item $\int \tanh x dx= \ln |\cosh x| + C$
+\item $\int \coth x dx= \ln |\sinh x| + C$
+\item $\int sech^2 x dx= \tanh x +C$
+\item $\int csch^2 x dx= - \coth x + C$
+\item $\int \dfrac{dx}{\sqrt{1-x^2}} = \arcsin x + C$
+\item $\int \dfrac{dx}{\sqrt{a^2-x^2}} = \arcsin \dfrac{x}{a} + C$
+\item $\int \dfrac{dx}{1+x^2} = \arctan x + C$
+\seti
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t, fragile]{Beberapa rumus integral tak tertentu[3]}
+\begin{enumerate}
+\conti
+\item $\int \dfrac{dx}{a^2+x^2} = \dfrac{1}{a} \arctan \dfrac{x}{a} + C$
+\item $\int \ln x dx = x \ln x - x + C$
+\item $\int \dfrac{dx}{\sqrt{x^2 \pm 1}} = \ln | x+ \sqrt{x^2 \pm 1} |+ C$
+\item $\int \dfrac{dx}{\sqrt{x^2 \pm a^2}} = \ln | x+ \sqrt{x^2 \pm a^2} |+ C$
+\item $\int \sqrt{1-x^2 } = \dfrac{x}{2}\sqrt{1-x^2 }+ \dfrac{1}{2} \arcsin x + C$
+\item $\int \sqrt{a^2-x^2 } = \dfrac{x}{2}\sqrt{a^2-x^2 }+ \dfrac{a^2}{2} \arcsin \dfrac {x}{a} + C$
+\end{enumerate}
+\end{frame}
+
+\section{Integrasi parsial}
+\begin{frame}[t, fragile]{Integrasi parsial}
+Jika $u=f(x)$ dan $v=g(x)$ adalah fungsi-fungsi yang diferensiabel maka: \\
+\begin{center}
+\fbox{$\int u dv = uv - \int v du$}
+\end{center}
+Cara menggunakan rumus diatas:\\
+\begin{itemize}
+\item $dv$ dipilih sehingga v mudah dicari
+\item $\int v du$ harus menjadi lebih mudah daripada $\int u dv$
+\end{itemize}
+Contoh: \\
+\begin{itemize}
+\item $I = \int x e^x dx$
+\item $I = \int e^x \sin{x} dx$
+\end{itemize}
+\end{frame}
+
+\section{Penerapan $1/D$ pada integral tak tertentu}
+\begin{frame}[t, fragile]{Penerapan $1/D$ pada integral tak tertentu}
+$$D= \dfrac{d}{dx}~~operator~ derivatif$$ \\
+$\dfrac{1}{D} = D^{-1} = \int ... dx$ operator integral\\
+$\dfrac{1}{1-D}=1 + D+ D^2+ ...; \Longrightarrow \dfrac{1}{1+D} = 1 - D - D^2-...$\\
+\vskip5pt
+$D \sin ax = a \cos ax$; \fbox{$D^2 \sin ax = -a^2 \sin ax$} \\
+$D \cos ax = -a \sin ax$; \fbox{$D^2 \cos ax = -a^2 \cos ax$} \\
+\vskip5pt
+$(D^2-b^2) \sin ax = (-a^2 - b^2) \sin ax$\\
+$(D^2-b^2) \cos ax = (-a^2 - b^2) \cos ax$, sehingga:\\
+\begin{center}
+\fbox{$\dfrac{1}{D^2-b^2} \sin ax = \dfrac{\sin ax} {-a^2 -b^2}$}
+\fbox{$\dfrac{1}{D^2-b^2} \cos ax = \dfrac{\cos ax} {-a^2 -b^2}$}
+\end{center}
+\end{frame}
+
+\begin{frame}[t, fragile]{Rumus: \fbox{$\dfrac{1}{D}{e^{ax}V}=e^{ax} \dfrac{1}{(D+a)}V$}}
+Bukti :
+$$D(e^{ax} U) = ae^{ax} U + e^{ax} DU$$
+$$D(e^{ax} U) = e^ax(D + a) U$$ 
+
+$$D\Bigl\{e^{ax}\dfrac{1}{(D+a)}V\Bigr\} = ea^{ax} V$$
+
+Misal:
+$$(D+a) U = V \Longrightarrow U = \dfrac{1}{D+a} V$$
+$$\dfrac{1}{D}(e^{ax}V)= e^{ax}\dfrac{1}{(D+a)} V$$
+
+Buktikan:\\
+$\int e^{ax}\cos{bx} dx=e^{ax}(D-a)\dfrac{\cos{bx}}{-b^2-a^2}$
+$\int e^{2x}(2x^2-4x+8)dx = \dfrac{1}{D}e^{2x}(2x^2-4x+8)$
+
+\end{frame}
+
+\begin{frame}[t, fragile]{Rumus: \fbox{$\dfrac{1}{D}{x~V}=\bigl(x - \dfrac{1}{D}\bigr) \dfrac{1}{D}V$}}
+Bukti:\\
+$D(x~U) = x ~DU + U$      Misal : $DU = V \rightarrow U= \dfrac{1}{D}$
+
+\begin{align*}
+D(x \dfrac{1}{D}xV) &= x V + \dfrac{1}{D}V \\
+x\dfrac{1}{D}V &= \dfrac{1}{D} (x V) + \dfrac{1}{D^2}V\\
+\dfrac{1}{D} (x V) &= x \dfrac{1}{D}V - \dfrac{1}{D^2} V \\
+\dfrac{1}{D} (x V) &= (x -\dfrac{1}{D}) \dfrac{1}{D} V
+\end{align*}
+Contoh:\\
+$\int x e^x \cos 2x dx=...$
+\end{frame}
+
+\begin{frame}[t, fragile]{Rumus: \fbox{$\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D^2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac{1}{D^4}V$+..}}
+Bukti:\\
+Jika $y = UV$ dimana $U=f(x)$ dan $v=g(x)$ maka turunan tingkat ke $n$,\\
+$y^{(n)} = D^{(n)} (UV)$ dirumuskan oleh Leibnitz sbb:
+$D^{(n)} = UD^nV + nDUD^{n-1}V+\dfrac{1}{D^2!} n(n-1)D^2UD^{n-2}V+\dfrac{1}{D^3!} n(n-1)(n-2)D^3UD^{n-3}V+..$\\
+\vskip10pt
+Dengan memasang n=-1, maka: \\
+$\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac{1}{D^4}V+...$
+
+\end{frame}
+
+%\section{Rumus-rumus reduksi}
+%\begin{frame}[t, fragile]{Rumus-rumus reduksi}
+%\end{frame}
+
+\section{Integrasi fungsi pecah rasional}
+\begin{frame}[t, fragile]{Integrasi fungsi pecah rasional}
+\begin{enumerate}
+\item Jika $N(x) = (ax + b)(cx + d)$ maka dibawa ke bentuk $\dfrac{A}{ax+b} + \dfrac{B}{cx+d}$. 
+\item Jika $N(x) = (ax+b)^2(cx+d)$ maka dibawa ke bentuk $\dfrac{A}{ax+b} + \dfrac{B}{ax+b}^2$. 
+\item Jika $N(x) = (ax^2+bx+c)$ dengan $D<$ maka dibawa ke bentuk $\dfrac{A}{cx+d} + \dfrac{Bx+C}{ax^2+b}$.
+\end{enumerate}
+\begin{block}{Contoh:}
+\begin{enumerate}
+\item $I=\int \dfrac{x-1}{(x+1)(x^2+1)}dx$
+\item $I=\int \dfrac{3x+1}{x^2+2x+1}dx$
+\item $I=\int \dfrac{23-2x}{x^2+9x-5}dx$
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\section{Integrasi fungsi trigonometri}
+\begin{frame}[t, fragile]{Formula operasi fungsi trigonometri}
+\begin{enumerate}
+\item $\sin^2x + \cos^2x =1$
+\item $\sin{2x} = 2 \sin{x} \cos {x}$
+\item $\cos{2x} = \cos^2x - \sin^2x$
+\item $\sin^2x =\dfrac{1}{2}(1-\cos{2x})$
+\item $\cos^2x =\dfrac1{1}{2}(1+\cos{2x})$
+\item $\sin(-x) = - \sin{x}; ~~ \cos{-x}= \cos{x}$
+\item $\sin {\alpha x} \cos {\beta x} = \dfrac{1}{2}\bigl\{\sin(\alpha+\beta)x+\sin(\alpha-\beta)x\bigr\}$
+\item $\cos {\alpha x} \sin {\beta x} = \dfrac{1}{2}\bigl\{\sin(\alpha+\beta)x-\sin(\alpha-\beta)x\bigr\}$
+\item $\cos {\alpha x} \cos {\beta x} = \dfrac{1}{2}\bigl\{\cos(\alpha+\beta)x+\cos(\alpha-\beta)x\bigr\}$
+\item $-\sin {\alpha x} \sin {\beta x} = \dfrac{1}{2}\bigl\{\cos(\alpha+\beta)x-\cos(\alpha-\beta)x\bigr\}$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t, fragile]{Integrasi fungsi trigonometri[1]}
+Bentuk: \fbox{$\int \alpha x \cos \beta x dx; ~ \int \cos \alpha x \sin \beta x dx; ~ \int \sin \alpha x \beta x dx$}
+\begin{center}
+\includegraphics[width=4.55in]{pict/integraltrigono.png}
+\end{center}
+Contoh:\\
+$\int \sin {5x} \cos {x} dx$
+\end{frame}
+
+\begin{frame}[t, fragile]{Integrasi fungsi trigonometri[2]}
+\begin{itemize}
+\item Bentuk: \fbox{$\int R (\sin x, \cos x) dx $}; R= fungsi rasional \\
+\vskip3pt Subtitusi : $\tan\dfrac{x}{2}=t \Longrightarrow \dfrac{x}{2} = \arctan {t}, \rightarrow x= 2 \arctan{x}$\\
+$$dx=\dfrac{2dt}{1+t^2}; \sin{x}=\dfrac{2t}{1+t^2}; \cos{x}=\dfrac{1-t^2}{1+t^2}$$
+Maka: $\int R (\sin x, \cos x) dx = \int R (\dfrac{2t}{1+t^2}.\dfrac{1-t^2}{1+t^2})\dfrac{2dt}{1+t^2}$
+\item Bentuk: \fbox{$R(\sin{x}, cos{x}) dx = \int R (-\sin{x}, -\cos{x} )dx$} \\
+\vskip5pt Subtitusi: $\tan{x} = t \Longrightarrow x=\arctan{t} \rightarrow \cos{x}=\dfrac{1}{\sqrt{1+x^2}}$
+\item Bentuk: \fbox{$R(\tan{x})dx$ }\\
+Subtitusi: $\tan {x} = t \Longrightarrow x=\arctan{t} \rightarrow dx = \dfrac{dt}{1+t^2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh:}
+\begin{enumerate}
+\item $I=\int \dfrac{dx}{5+4\cos{x}}$
+\item $I=\int {dx}{\sin^2x-\sin x \cos x}$
+\item $I=\int \dfrac{1+\tan{x}}{1-\tan{x}}dx$
+\end{enumerate}
+\end{frame}
+%\begin{frame}[t, fragile]{Integrasi dengan subtitusi trigonometri}
+%\end{frame}
+
+%\begin{frame}[t, fragile]{Integrasi fungsi irasional tertentu}
+%\end{frame}
+
+\end{document}
