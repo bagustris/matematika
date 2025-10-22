@@ -1,6 +1,6 @@
-# Matematika 1 #
+# Matematika
 
-Ini adalah repository material Matematika 1 di Jurusan Teknik Fisika, Fakultas Teknologi Industri, Institut Teknologi Sepuluh Nopember.
+Ini adalah repository material Matematika Dasar (a.k.a Matematika SMA++) yang awalnya ditujukan untuk mahasiswa baru (S1 dan D3) di Jurusan Teknik Fisika, Fakultas Teknologi Industri, Institut Teknologi Sepuluh Nopember.
 
 ### Untuk apa repository ini? ###
 
