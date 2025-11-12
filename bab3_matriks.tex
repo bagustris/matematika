@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[bahasai]{babel}
 \usepackage{amsmath}
-\title{Matriks}
+\title{Matriks dan Determinan}
 \author{Bagus Tris Atmaja\\Institut Teknologi Sepuluh Nopember}
 \date{\today}
 \begin{document}
@@ -235,6 +235,21 @@ Misalkan $A$, $B$, dan $C$ adalah matriks-matriks dengan ukuran yang sesuai, dan
 \end{enumerate}
 \end{frame}
 
+\section{Determinan Tingkat N}
+\begin{frame}[t,fragile]{Definisi Determinan}
+\textbf{Determinan} adalah suatu bilangan yang dihubungkan dengan suatu matriks bujur sangkar.\\
+\vspace{0.3cm}
+Untuk matriks $A$ berukuran $n \times n$, determinannya ditulis sebagai:
+$$ \det(A) \quad \text{atau} \quad |A| $$
+\vspace{0.3cm}
+\textbf{Sifat penting:}
+\begin{itemize}
+\item Determinan hanya didefinisikan untuk matriks bujur sangkar
+\item Determinan menghasilkan suatu bilangan skalar
+\item Jika $\det(A) = 0$, matriks $A$ disebut \textbf{singular} (tidak memiliki invers)
+\item Jika $\det(A) \neq 0$, matriks $A$ disebut \textbf{non-singular} (memiliki invers)
+\end{itemize}
+\end{frame}
 
 \section{Ekspansi Laplace}
 \begin{frame}[t,fragile]{Ekspansi Laplace}
@@ -250,6 +265,16 @@ dimana:
 \item $C_{ij}$ adalah kofaktor
 \item $M_{ij}$ adalah minor (determinan submatriks)
 \end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Determinan Orde 1}
+Untuk matriks $1 \times 1$:
+$$ A = [a_{11}] $$
+Determinannya adalah:
+$$ \det(A) = a_{11} $$
+\vspace{0.3cm}
+\textbf{Contoh:}
+$$ A = [5] \quad \Longrightarrow \quad \det(A) = 5 $$
 \end{frame}
 
 \begin{frame}[t,fragile]{Determinan Matriks 2x2}
@@ -574,8 +599,7 @@ $$ y = \frac{\det(A_2)}{\det(A)} = \frac{-10}{-5} = 2 $$
 Jadi, $x = 1$ dan $y = 2$ (sama dengan metode invers)
 \end{frame}
 
-\begin{frame}[t,fragile]{Kesimpulan}
-\textbf{Ringkasan Metode Penyelesaian Sistem Linear:}
+\begin{frame}[t,fragile]{Ringkasan Metode Penyelesaian Sistem Linear:}
 \begin{enumerate}
 \item \textbf{Metode Invers Matriks:} $X = A^{-1}B$
     \begin{itemize}
@@ -593,6 +617,23 @@ Jadi, $x = 1$ dan $y = 2$ (sama dengan metode invers)
     \item Tidak memerlukan perhitungan determinan
     \end{itemize}
 \end{enumerate}
+\end{frame}
+
+\begin{frame}[t,fragile]{Ringkasan Determinan}
+\begin{itemize}
+\item Determinan adalah bilangan yang terkait dengan matriks bujur sangkar
+\item Minor dan kofaktor digunakan untuk menghitung determinan
+\item Ekspansi Laplace: metode umum untuk semua orde
+\item Aturan Sarrus: metode cepat khusus untuk $3 \times 3$
+\item $\det(A) = \det(A^T)$
+\item Sifat-sifat determinan berguna untuk perhitungan efisien
+\item Determinan digunakan dalam:
+    \begin{itemize}
+    \item Menentukan invertibilitas matriks
+    \item Aturan Cramer untuk sistem linear
+    \item Menghitung invers matriks
+    \end{itemize}
+\end{itemize}
 \end{frame}
 
 \end{document}
