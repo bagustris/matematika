@@ -1,0 +1,598 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[bahasai]{babel}
+\usepackage{amsmath}
+\title{Matriks}
+\author{Bagus Tris Atmaja\\Institut Teknologi Sepuluh Nopember}
+\date{\today}
+\begin{document}
+	\frame{\titlepage}
+	\frame{
+		\frametitle{Table of Contents}
+		\tableofcontents
+	}
+	
+\section{Definisi-definisi matriks}
+\begin{frame}[t,fragile]{Definisi}
+Matriks adalah suatu susunan deretan empat persegi panjang dari bilangan-bilangan yang tersusun dalam $m$ baris dan $n$ kolom dalam tanda kurung.\\
+Contoh:\\
+
+$$A = \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} & a_{14}\\
+  a_{21} & a_{22} & a_{23} & a_{24}\\
+  a_{31} & a_{32} & a_{33} & a_{34}
+ \end{bmatrix} $$
+
+adalah suatu matriks berukuran 3x4. Ditulis $A_{3x4}$ (3 baris 4 kolom).\\
+Matriks bujur sangkar adalah suatu matriks yang jumlah barisnya sama dengan jumlah kolomnya (disebut matriks dengan orde $n$).\\
+Matriks Simetrik adalah matrik bujur sangkar jika ditransposekan hasilnya sama.\\
+$$A = A^T$$
+\end{frame}
+
+\begin{frame}[t,fragile]{Matriks}
+$$A = \begin{bmatrix}
+    2 & 1 & 3 \\
+    1 & 5 & 0 \\
+    3 & 0 & 1
+   \end{bmatrix} $$
+
+\begin{itemize}
+\item \underline{Trace}: Jumlah elemen diagonal pokok suatu matriks bujur sangkar.\\
+$$Trace~~A = 2 + 5 + 1 = 8$$
+\item \underline{Matriks singular}: Jika determinan matriks bujur sangkar adalah nol.
+\item \underline{Matriks baris}: Jika $m=1$\\
+$$ B = \bigl[ b_1 ~~~ b_2 ~~~ b_3 \bigr]$$ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Matriks}
+\begin{itemize}
+\item \underline{Matriks kolom}: Jika $n=1$ \\
+$$ C = \begin{bmatrix}
+       	C_1 \\
+	    C_2 \\
+	    C_3 
+        \end{bmatrix} $$
+\item \underline{Matris nol}: matrik yang semua elemennya adalah nol.\\
+$$ B = \begin{bmatrix}
+       	0 & 0 & 0\\
+	    0 & 0 & 0 
+        \end{bmatrix} $$
+\item \underline{Matriks Satuan}:\\
+$$ C = \begin{bmatrix}
+       	1 & 0 & 0 \\
+	    0 & 1 & 0 \\
+	    0 & 0 & 1
+        \end{bmatrix} $$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Matriks}
+\begin{itemize}
+\item \underline{Matriks Diagonal}: Matriks bujur sangkar yang mempunyai nilai pada elemen diagonal sedang elemen lainnya nol.
+$$ a_{ii} = \begin{bmatrix}
+       	a_{11} & 0 & 0 \\
+	    0 & a_{12} & 0 \\
+	    0 & 0 & a_{13} 
+        \end{bmatrix} $$
+\item \underline{Transpose}: transpose dari matriks A adalah matriks dimana baris dan kolom dipertukarkan.
+\begin{columns}
+\column{.5\textwidth}
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} & a_{13}\\
+	    a_{21} & a_{22} & a_{23}\\
+        \end{bmatrix} $$
+\column{.5\textwidth}
+$$ \Longrightarrow A^T = \begin{bmatrix}
+       	a_{11} & a_{21}\\
+	    a_{12} & a_{22}\\
+        a_{13} & a_{23} 
+        \end{bmatrix} $$
+\end{columns}
+\item \underline{Minor}: Minor $M_{ij}$ dari suatu matriks A dibentuk dengan menghilangkan baris ke $i$ dan kolom ke $j$ dari matriks asal.
+\begin{columns}
+\column{.5\textwidth}
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} & a_{13}\\
+	    a_{21} & a_{22} & a_{23}\\
+        a_{31} & a_{32} & a_{33} 
+        \end{bmatrix} $$
+\column{.5\textwidth}
+$$ \Longrightarrow M_{12} = \begin{bmatrix}
+       	a_{21} & a_{21}\\
+        a_{31} & a_{33} 
+        \end{bmatrix} $$
+\end{columns}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Matriks}
+\begin{itemize}
+\item \underline{Kofaktor}: Kofaktor $C_{ij}$ adalah sama dengan minor yang tertanda $(-1)^{i+j} M_{ij}$.\\
+    $$ C_{12} = (-1)^{1+2} ~ M_{12} = - M_{12} $$
+\item \underline{Matriks Inversi}: Inversi $A^{(-1)}$ dari matriks $A$ memenuhi hubungan,\\ 
+    $$ A^{-1} A = A A^{-1} = I $$
+\item \underline{Matriks orthogonal}: Matriks yang mememenuhi hubungan,\\
+    $$ A^T A = A A^T = I$$ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Adjoint Matriks}
+Suatu matriks adjoint dari matriks bujur sangkar $A$ adalah transpose matriks kofaktor $A$. \\
+Misalkan matriks kofaktor $A$ adalah:
+$$ C_{ij} = \begin{bmatrix}
+            C_{11} & C_{12} & C_{13} \\
+            C_{21} & C_{22} & C_{23} \\
+            C_{31} & C_{32} & C_{33}
+            \end{bmatrix} $$
+$$ Adj~A = \bigl[ C_{ij}^T \bigr] = \bigl[ C_{ji} \bigr] =  \begin{bmatrix}
+                                                            C_{11} & C_{21} & C_{31} \\
+                                                            C_{12} & C_{22} & C_{32} \\
+                                                            C_{13} & C_{23} & C_{33}
+                                                            \end{bmatrix} $$
+\end{frame}
+
+\section{Aturan Operasi Matriks}	
+\begin{frame}[t,fragile]{Penjumlahan dan Pengurangan Matriks}
+Dua matriks $A$ dan $B$ dapat dijumlahkan atau dikurangkan jika dan hanya jika kedua matriks tersebut mempunyai ukuran yang sama.\\
+\vspace{0.3cm}
+Jika $A = [a_{ij}]$ dan $B = [b_{ij}]$ maka:
+\begin{itemize}
+\item Penjumlahan: $(A + B) = [a_{ij} + b_{ij}]$
+\item Pengurangan: $(A - B) = [a_{ij} - b_{ij}]$
+\end{itemize}
+\vspace{0.3cm}
+\textbf{Contoh:}\\
+$$ A = \begin{bmatrix}
+       	2 & 3 \\
+	    1 & 4
+        \end{bmatrix}, ~~ B = \begin{bmatrix}
+       	5 & 1 \\
+	    2 & 3
+        \end{bmatrix} $$
+$$ A + B = \begin{bmatrix}
+       	7 & 4 \\
+	    3 & 7
+        \end{bmatrix}, ~~ A - B = \begin{bmatrix}
+       	-3 & 2 \\
+	    -1 & 1
+        \end{bmatrix} $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Perkalian Skalar dengan Matriks}
+Jika $k$ adalah suatu bilangan skalar dan $A = [a_{ij}]$ adalah matriks, maka perkalian skalar dengan matriks adalah:
+$$ kA = k[a_{ij}] = [ka_{ij}] $$
+\vspace{0.3cm}
+\textbf{Contoh:}\\
+Jika $k = 3$ dan 
+$$ A = \begin{bmatrix}
+       	2 & -1 & 3 \\
+	    0 & 4 & 1
+        \end{bmatrix} $$
+Maka:
+$$ 3A = \begin{bmatrix}
+       	6 & -3 & 9 \\
+	    0 & 12 & 3
+        \end{bmatrix} $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Perkalian Matriks}
+Matriks $A$ berukuran $m \times n$ dapat dikalikan dengan matriks $B$ berukuran $n \times p$ menghasilkan matriks $C$ berukuran $m \times p$.\\
+\vspace{0.2cm}
+Syarat: Jumlah kolom matriks pertama harus sama dengan jumlah baris matriks kedua.\\
+\vspace{0.2cm}
+Elemen $c_{ij}$ dari matriks hasil $C$ adalah:
+$$ c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} $$
+\vspace{0.2cm}
+\textbf{Contoh:}\\
+$$ A_{2 \times 3} = \begin{bmatrix}
+       	1 & 2 & 3 \\
+	    4 & 5 & 6
+        \end{bmatrix}, ~~ B_{3 \times 2} = \begin{bmatrix}
+       	1 & 2 \\
+	    0 & 1 \\
+        1 & 0
+        \end{bmatrix} $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Perkalian Matriks (lanjutan)}
+$$ A_{2 \times 3} = \begin{bmatrix}
+       	1 & 2 & 3 \\
+	    4 & 5 & 6
+        \end{bmatrix}, ~~ B_{3 \times 2} = \begin{bmatrix}
+       	1 & 2 \\
+	    0 & 1 \\
+        1 & 0
+        \end{bmatrix} $$
+\vspace{0.3cm}
+$$ C_{2 \times 2} = AB = \begin{bmatrix}
+       	(1 \cdot 1 + 2 \cdot 0 + 3 \cdot 1) & (1 \cdot 2 + 2 \cdot 1 + 3 \cdot 0) \\
+	    (4 \cdot 1 + 5 \cdot 0 + 6 \cdot 1) & (4 \cdot 2 + 5 \cdot 1 + 6 \cdot 0)
+        \end{bmatrix} $$
+\vspace{0.3cm}
+$$ C = \begin{bmatrix}
+       	4 & 4 \\
+	    10 & 13
+        \end{bmatrix} $$
+\vspace{0.2cm}
+\textbf{Catatan:} Perkalian matriks tidak komutatif, artinya $AB \neq BA$ (secara umum).
+\end{frame}
+
+\begin{frame}[t,fragile]{Sifat-sifat Operasi Matriks}
+Misalkan $A$, $B$, dan $C$ adalah matriks-matriks dengan ukuran yang sesuai, dan $k$, $m$ adalah skalar, maka berlaku:
+\begin{enumerate}
+\item $A + B = B + A$ (komutatif penjumlahan)
+\item $(A + B) + C = A + (B + C)$ (asosiatif penjumlahan)
+\item $A + O = O + A = A$ (identitas penjumlahan)
+\item $A + (-A) = O$ (invers penjumlahan)
+\item $k(A + B) = kA + kB$ (distributif kiri)
+\item $(k + m)A = kA + mA$ (distributif kanan)
+\item $(km)A = k(mA)$ (asosiatif perkalian skalar)
+\item $(AB)C = A(BC)$ (asosiatif perkalian matriks)
+\item $A(B + C) = AB + AC$ (distributif kiri perkalian)
+\item $(A + B)C = AC + BC$ (distributif kanan perkalian)
+\item $AI = IA = A$ (identitas perkalian)
+\end{enumerate}
+\end{frame}
+
+
+\section{Ekspansi Laplace}
+\begin{frame}[t,fragile]{Ekspansi Laplace}
+\textbf{Ekspansi Laplace} adalah metode untuk menghitung determinan matriks dengan mengekspansikan sepanjang suatu baris atau kolom.\\
+\vspace{0.3cm}
+Determinan matriks $A$ berukuran $n \times n$ dapat dihitung dengan ekspansi baris ke-$i$:
+$$ \det(A) = \sum_{j=1}^{n} a_{ij} C_{ij} = \sum_{j=1}^{n} a_{ij} (-1)^{i+j} M_{ij} $$
+atau ekspansi kolom ke-$j$:
+$$ \det(A) = \sum_{i=1}^{n} a_{ij} C_{ij} = \sum_{i=1}^{n} a_{ij} (-1)^{i+j} M_{ij} $$
+dimana:
+\begin{itemize}
+\item $a_{ij}$ adalah elemen matriks pada baris $i$ kolom $j$
+\item $C_{ij}$ adalah kofaktor
+\item $M_{ij}$ adalah minor (determinan submatriks)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Determinan Matriks 2x2}
+Untuk matriks $2 \times 2$:
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} \\
+	    a_{21} & a_{22}
+        \end{bmatrix} $$
+Determinannya adalah:
+$$ \det(A) = |A| = a_{11}a_{22} - a_{12}a_{21} $$
+\vspace{0.3cm}
+\textbf{Contoh:}\\
+$$ A = \begin{bmatrix}
+       	3 & 2 \\
+	    1 & 4
+        \end{bmatrix} $$
+$$ \det(A) = (3)(4) - (2)(1) = 12 - 2 = 10 $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Determinan Matriks 3x3 dengan Ekspansi Laplace}
+Untuk matriks $3 \times 3$, kita ekspansi sepanjang baris pertama:
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} & a_{13} \\
+	    a_{21} & a_{22} & a_{23} \\
+	    a_{31} & a_{32} & a_{33}
+        \end{bmatrix} $$
+$$ \det(A) = a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13} $$
+dimana:
+\begin{align*}
+C_{11} &= (+1) \begin{vmatrix} a_{22} & a_{23} \\ a_{32} & a_{33} \end{vmatrix} = a_{22}a_{33} - a_{23}a_{32} \\
+C_{12} &= (-1) \begin{vmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{vmatrix} = -(a_{21}a_{33} - a_{23}a_{31}) \\
+C_{13} &= (+1) \begin{vmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{vmatrix} = a_{21}a_{32} - a_{22}a_{31}
+\end{align*}
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Ekspansi Laplace untuk Matriks 3x3}
+Hitung determinan matriks berikut dengan ekspansi baris pertama:
+$$ A = \begin{bmatrix}
+       	2 & 1 & 3 \\
+	    0 & 4 & 1 \\
+	    1 & 2 & 5
+        \end{bmatrix} $$
+\textbf{Solusi:}
+\begin{align*}
+\det(A) &= 2 \begin{vmatrix} 4 & 1 \\ 2 & 5 \end{vmatrix} - 1 \begin{vmatrix} 0 & 1 \\ 1 & 5 \end{vmatrix} + 3 \begin{vmatrix} 0 & 4 \\ 1 & 2 \end{vmatrix} \\
+&= 2(4 \cdot 5 - 1 \cdot 2) - 1(0 \cdot 5 - 1 \cdot 1) + 3(0 \cdot 2 - 4 \cdot 1) \\
+&= 2(20 - 2) - 1(0 - 1) + 3(0 - 4) \\
+&= 2(18) - 1(-1) + 3(-4) \\
+&= 36 + 1 - 12 = 25
+\end{align*}
+\end{frame}
+
+\begin{frame}[t,fragile]{Strategi Pemilihan Baris/Kolom}
+\textbf{Tips untuk Ekspansi Laplace:}
+\begin{enumerate}
+\item Pilih baris atau kolom yang memiliki paling banyak elemen nol untuk mempermudah perhitungan
+\item Elemen nol tidak perlu dihitung kofaktornya (karena dikalikan nol)
+\item Ekspansi dapat dilakukan di baris atau kolom manapun, hasilnya sama
+\end{enumerate}
+\vspace{0.3cm}
+\textbf{Contoh:} Untuk matriks
+$$ B = \begin{bmatrix}
+       	2 & 0 & 3 \\
+	    0 & 0 & 1 \\
+	    1 & 0 & 5
+        \end{bmatrix} $$
+Lebih efisien ekspansi sepanjang kolom kedua (3 elemen nol):
+$$ \det(B) = 0 - 0 + 0 = 0 $$
+Jadi matriks $B$ adalah matriks singular.
+\end{frame}
+
+\section{Aturan Sarrus}
+\begin{frame}[t,fragile]{Aturan Sarrus}
+\textbf{Aturan Sarrus} adalah metode khusus untuk menghitung determinan matriks $3 \times 3$ secara cepat.\\
+\vspace{0.3cm}
+Untuk matriks:
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} & a_{13} \\
+	    a_{21} & a_{22} & a_{23} \\
+	    a_{31} & a_{32} & a_{33}
+        \end{bmatrix} $$
+\textbf{Langkah-langkah:}
+\begin{enumerate}
+\item Tulis ulang 2 kolom pertama di sebelah kanan matriks
+\item Kalikan elemen-elemen diagonal dari kiri atas ke kanan bawah (positif)
+\item Kalikan elemen-elemen diagonal dari kiri bawah ke kanan atas (negatif)
+\item Jumlahkan hasil perkalian dengan tanda yang sesuai
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t,fragile]{Aturan Sarrus - Formula}
+$$ A = \begin{bmatrix}
+       	a_{11} & a_{12} & a_{13} \\
+	    a_{21} & a_{22} & a_{23} \\
+	    a_{31} & a_{32} & a_{33}
+        \end{bmatrix} 
+        \begin{matrix}
+       	a_{11} & a_{12} \\
+	    a_{21} & a_{22} \\
+	    a_{31} & a_{32}
+        \end{matrix} $$
+\vspace{0.3cm}
+\textbf{Diagonal positif} (kiri atas ke kanan bawah):
+$$ +a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} $$
+\textbf{Diagonal negatif} (kiri bawah ke kanan atas):
+$$ -a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} $$
+\vspace{0.2cm}
+$$ \det(A) = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} $$
+$$ - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Aturan Sarrus}
+Hitung determinan matriks berikut menggunakan Aturan Sarrus:
+$$ A = \begin{bmatrix}
+       	2 & 1 & 3 \\
+	    0 & 4 & 1 \\
+	    1 & 2 & 5
+        \end{bmatrix} 
+        \begin{matrix}
+       	2 & 1 \\
+	    0 & 4 \\
+	    1 & 2
+        \end{matrix} $$
+\textbf{Diagonal positif:}
+$$ (2)(4)(5) + (1)(1)(1) + (3)(0)(2) = 40 + 1 + 0 = 41 $$
+\textbf{Diagonal negatif:}
+$$ (3)(4)(1) + (2)(1)(2) + (1)(0)(5) = 12 + 4 + 0 = 16 $$
+\textbf{Hasil:}
+$$ \det(A) = 41 - 16 = 25 $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Catatan Penting Aturan Sarrus}
+\begin{itemize}
+\item Aturan Sarrus \textbf{hanya berlaku} untuk matriks $3 \times 3$
+\item Untuk matriks $2 \times 2$, gunakan rumus langsung
+\item Untuk matriks $4 \times 4$ atau lebih besar, gunakan Ekspansi Laplace
+\item Aturan Sarrus lebih cepat daripada Ekspansi Laplace untuk matriks $3 \times 3$
+\item Hasil determinan sama dengan metode Ekspansi Laplace
+\end{itemize}
+\end{frame}
+
+\section{Determinan Transpose}
+\begin{frame}[t,fragile]{Determinan Transpose}
+\textbf{Teorema:} Determinan suatu matriks sama dengan determinan transposenya.
+$$ \det(A) = \det(A^T) $$
+\vspace{0.3cm}
+\textbf{Implikasi:}
+\begin{itemize}
+\item Semua sifat determinan yang berlaku untuk baris juga berlaku untuk kolom
+\item Ekspansi Laplace dapat dilakukan sepanjang baris atau kolom
+\item Operasi baris dan operasi kolom memiliki efek yang sama terhadap determinan
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Bukti untuk Matriks 2x2}
+Misalkan:
+$$ A = \begin{bmatrix}
+       	a & b \\
+	    c & d
+        \end{bmatrix}, \quad A^T = \begin{bmatrix}
+       	a & c \\
+	    b & d
+        \end{bmatrix} $$
+Maka:
+\begin{align*}
+\det(A) &= ad - bc \\
+\det(A^T) &= ad - cb = ad - bc
+\end{align*}
+$$ \therefore \det(A) = \det(A^T) $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Determinan Transpose}
+Verifikasi bahwa $\det(A) = \det(A^T)$ untuk matriks berikut:
+$$ A = \begin{bmatrix}
+       	1 & 2 & 3 \\
+	    0 & 4 & 5 \\
+	    1 & 0 & 6
+        \end{bmatrix}, \quad A^T = \begin{bmatrix}
+       	1 & 0 & 1 \\
+	    2 & 4 & 0 \\
+	    3 & 5 & 6
+        \end{bmatrix} $$
+Menggunakan Ekspansi Laplace baris pertama untuk $A$:
+$$ \det(A) = 1 \begin{vmatrix} 4 & 5 \\ 0 & 6 \end{vmatrix} - 2 \begin{vmatrix} 0 & 5 \\ 1 & 6 \end{vmatrix} + 3 \begin{vmatrix} 0 & 4 \\ 1 & 0 \end{vmatrix} $$
+$$ = 1(24 - 0) - 2(0 - 5) + 3(0 - 4) = 24 + 10 - 12 = 22 $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Determinan Transpose (lanjutan)}
+Menggunakan Ekspansi Laplace baris pertama untuk $A^T$:
+$$ A^T = \begin{bmatrix}
+       	1 & 0 & 1 \\
+	    2 & 4 & 0 \\
+	    3 & 5 & 6
+        \end{bmatrix} $$
+$$ \det(A^T) = 1 \begin{vmatrix} 4 & 0 \\ 5 & 6 \end{vmatrix} - 0 \begin{vmatrix} 2 & 0 \\ 3 & 6 \end{vmatrix} + 1 \begin{vmatrix} 2 & 4 \\ 3 & 5 \end{vmatrix} $$
+$$ = 1(24 - 0) - 0 + 1(10 - 12) = 24 - 2 = 22 $$
+\vspace{0.3cm}
+$$ \therefore \det(A) = \det(A^T) = 22 ~~ \checkmark $$
+\end{frame}
+
+\section{Sifat-sifat Determinan}
+\begin{frame}[t,fragile]{Sifat-sifat Determinan (1)}
+Berikut adalah sifat-sifat penting determinan:
+\begin{enumerate}
+\item \textbf{Determinan Transpose:} $\det(A^T) = \det(A)$
+\item \textbf{Determinan Matriks Identitas:} $\det(I) = 1$
+\item \textbf{Perkalian Skalar:} Jika matriks $A$ dikalikan dengan skalar $k$, maka:
+$$ \det(kA) = k^n \det(A) $$
+dimana $n$ adalah ukuran matriks (untuk matriks $n \times n$)
+\item \textbf{Determinan Perkalian Matriks:} 
+$$ \det(AB) = \det(A) \cdot \det(B) $$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t,fragile]{Sifat-sifat Determinan (2)}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item \textbf{Baris/Kolom Nol:} Jika suatu baris atau kolom semuanya nol, maka $\det(A) = 0$
+\item \textbf{Baris/Kolom Identik:} Jika dua baris atau dua kolom identik, maka $\det(A) = 0$
+\item \textbf{Baris/Kolom Proporsional:} Jika suatu baris/kolom adalah kelipatan dari baris/kolom lain, maka $\det(A) = 0$
+\item \textbf{Pertukaran Baris/Kolom:} Jika dua baris atau kolom ditukar, maka determinan berubah tanda:
+$$ \det(A') = -\det(A) $$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t,fragile]{Sifat-sifat Determinan (3)}
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item \textbf{Perkalian Baris/Kolom dengan Skalar:} Jika suatu baris/kolom dikalikan dengan skalar $k$, determinan juga dikalikan dengan $k$
+\item \textbf{Penjumlahan Kelipatan Baris/Kolom:} Jika suatu baris/kolom ditambah dengan kelipatan baris/kolom lain, determinan tidak berubah:
+$$ R_i \rightarrow R_i + kR_j \Rightarrow \det(A') = \det(A) $$
+\item \textbf{Determinan Matriks Segitiga:} Determinan matriks segitiga (atas atau bawah) adalah perkalian elemen diagonal utamanya
+\item \textbf{Determinan Invers:} $\det(A^{-1}) = \frac{1}{\det(A)}$ (jika $A$ invertibel)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Sifat Determinan}
+\textbf{Contoh 1:} Determinan perkalian matriks
+$$ A = \begin{bmatrix} 2 & 1 \\ 3 & 4 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix} $$
+$$ \det(A) = 8 - 3 = 5, \quad \det(B) = 1 - 0 = 1 $$
+$$ AB = \begin{bmatrix} 2 & 5 \\ 3 & 10 \end{bmatrix}, \quad \det(AB) = 20 - 15 = 5 $$
+$$ \det(AB) = \det(A) \cdot \det(B) = 5 \cdot 1 = 5 ~~ \checkmark $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Sifat Determinan (lanjutan)}
+\textbf{Contoh 2:} Determinan matriks segitiga atas
+$$ A = \begin{bmatrix}
+       	2 & 3 & 1 \\
+	    0 & 4 & 5 \\
+	    0 & 0 & 6
+        \end{bmatrix} $$
+Determinan = perkalian elemen diagonal:
+$$ \det(A) = 2 \times 4 \times 6 = 48 $$
+\vspace{0.3cm}
+\textbf{Contoh 3:} Perkalian skalar
+$$ A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad \det(A) = -2 $$
+$$ 2A = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}, \quad \det(2A) = 16 - 24 = -8 = 2^2 \cdot (-2) ~~ \checkmark $$
+\end{frame}
+
+\section{Persamaan Linear Simultan}
+\begin{frame}[t,fragile]{Sistem Persamaan Linear}
+Sistem persamaan linear dengan $n$ variabel dan $n$ persamaan dapat ditulis dalam bentuk matriks:
+$$ AX = B $$
+dimana:
+\begin{itemize}
+\item $A$ adalah matriks koefisien ($n \times n$)
+\item $X$ adalah vektor variabel ($n \times 1$)
+\item $B$ adalah vektor konstanta ($n \times 1$)
+\end{itemize}
+\vspace{0.3cm}
+\textbf{Contoh:} Sistem 2 persamaan 2 variabel:
+\begin{align*}
+2x + 3y &= 8 \\
+x - y &= -1
+\end{align*}
+dapat ditulis: $\begin{bmatrix} 2 & 3 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 8 \\ -1 \end{bmatrix}$
+\end{frame}
+
+\begin{frame}[t,fragile]{Metode Invers Matriks}
+Jika $\det(A) \neq 0$, maka sistem $AX = B$ memiliki solusi tunggal:
+$$ X = A^{-1}B $$
+\vspace{0.3cm}
+Untuk matriks $2 \times 2$: $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$
+$$ A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} = \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} $$
+\vspace{0.3cm}
+\textbf{Catatan:}
+\begin{itemize}
+\item Jika $\det(A) = 0$, sistem tidak memiliki solusi tunggal
+\item Sistem bisa tidak memiliki solusi atau memiliki tak hingga solusi
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Metode Invers}
+Selesaikan sistem: $\begin{cases} 2x + 3y = 8 \\ x - y = -1 \end{cases}$
+\vspace{0.2cm}
+$$ A = \begin{bmatrix} 2 & 3 \\ 1 & -1 \end{bmatrix}, \quad B = \begin{bmatrix} 8 \\ -1 \end{bmatrix} $$
+$$ \det(A) = 2(-1) - 3(1) = -2 - 3 = -5 $$
+$$ A^{-1} = \frac{1}{-5} \begin{bmatrix} -1 & -3 \\ -1 & 2 \end{bmatrix} = \begin{bmatrix} 1/5 & 3/5 \\ 1/5 & -2/5 \end{bmatrix} $$
+$$ X = A^{-1}B = \begin{bmatrix} 1/5 & 3/5 \\ 1/5 & -2/5 \end{bmatrix} \begin{bmatrix} 8 \\ -1 \end{bmatrix} = \begin{bmatrix} 8/5 - 3/5 \\ 8/5 + 2/5 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} $$
+Jadi, $x = 1$ dan $y = 2$
+\end{frame}
+
+\begin{frame}[t,fragile]{Aturan Cramer}
+\textbf{Aturan Cramer} menyatakan bahwa untuk sistem $AX = B$, solusinya adalah:
+$$ x_i = \frac{\det(A_i)}{\det(A)} $$
+dimana $A_i$ adalah matriks yang diperoleh dengan mengganti kolom ke-$i$ dari $A$ dengan vektor $B$.
+\vspace{0.3cm}
+Untuk sistem 2 variabel:
+$$ x = \frac{\det(A_1)}{\det(A)}, \quad y = \frac{\det(A_2)}{\det(A)} $$
+dimana:
+$$ A_1 = \begin{bmatrix} b_1 & a_{12} \\ b_2 & a_{22} \end{bmatrix}, \quad A_2 = \begin{bmatrix} a_{11} & b_1 \\ a_{21} & b_2 \end{bmatrix} $$
+\end{frame}
+
+\begin{frame}[t,fragile]{Contoh Aturan Cramer}
+Selesaikan sistem: $\begin{cases} 2x + 3y = 8 \\ x - y = -1 \end{cases}$ dengan Aturan Cramer
+\vspace{0.2cm}
+$$ A = \begin{bmatrix} 2 & 3 \\ 1 & -1 \end{bmatrix}, \quad \det(A) = -5 $$
+$$ A_1 = \begin{bmatrix} 8 & 3 \\ -1 & -1 \end{bmatrix}, \quad \det(A_1) = 8(-1) - 3(-1) = -8 + 3 = -5 $$
+$$ A_2 = \begin{bmatrix} 2 & 8 \\ 1 & -1 \end{bmatrix}, \quad \det(A_2) = 2(-1) - 8(1) = -2 - 8 = -10 $$
+$$ x = \frac{\det(A_1)}{\det(A)} = \frac{-5}{-5} = 1 $$
+$$ y = \frac{\det(A_2)}{\det(A)} = \frac{-10}{-5} = 2 $$
+Jadi, $x = 1$ dan $y = 2$ (sama dengan metode invers)
+\end{frame}
+
+\begin{frame}[t,fragile]{Kesimpulan}
+\textbf{Ringkasan Metode Penyelesaian Sistem Linear:}
+\begin{enumerate}
+\item \textbf{Metode Invers Matriks:} $X = A^{-1}B$
+    \begin{itemize}
+    \item Efisien untuk banyak sistem dengan matriks $A$ yang sama
+    \item Memerlukan perhitungan invers matriks
+    \end{itemize}
+\item \textbf{Aturan Cramer:} $x_i = \frac{\det(A_i)}{\det(A)}$
+    \begin{itemize}
+    \item Baik untuk sistem kecil (2-3 variabel)
+    \item Memerlukan perhitungan banyak determinan
+    \end{itemize}
+\item \textbf{Eliminasi Gauss:} (akan dipelajari lebih lanjut)
+    \begin{itemize}
+    \item Paling efisien untuk sistem besar
+    \item Tidak memerlukan perhitungan determinan
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\end{document}
