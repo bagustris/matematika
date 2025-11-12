@@ -11,12 +11,12 @@ Ini adalah repository material Matematika Dasar (a.k.a Matematika SMA++) yang aw
 
 ### Materi: ###
 
-* 1. Rangkuman Matematika SMA
-* 2. Bilangan Komplek
-* 3. Matriks dan Determinan
-* 4. Aljabar Vektor
-* 5. Turunan
-* 6. Integral
+1. Rangkuman Matematika SMA
+2. Bilangan Komplek
+3. Matriks dan Determinan
+4. Aljabar Vektor
+5. Turunan
+6. Integral
 
 ### Authors ###
 * B.T. Atmaja (typing)
