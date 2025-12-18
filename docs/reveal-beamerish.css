@@ -1,0 +1,123 @@
+/*
+  Beamer-ish tweaks for Pandoc -> Reveal.js output.
+  Goal: keep text selectable, but nudge layout/colors closer to the existing
+  Torino/Chameleon beamer theme used by the PDFs.
+
+  Colors sourced from beamercolorthemechameleon.sty:
+    chameleongreen1 RGB(98,189,25)
+    chameleongreen2 RGB(188,225,141)
+    chameleongreen3 RGB(51,149,48)
+    chameleongreen4 RGB(0,98,90)
+*/
+
+:root {
+  --chameleongreen1: rgb(98, 189, 25);
+  --chameleongreen2: rgb(188, 225, 141);
+  --chameleongreen3: rgb(51, 149, 48);
+  --chameleongreen4: rgb(0, 98, 90);
+}
+
+/* Keep Reveal defaults, but use a more "TeX-like" reading rhythm */
+.reveal {
+  font-size: 34px;
+  line-height: 1.25;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+/* Give content margins similar to beamerinnerthemefancy */
+.reveal .slides section {
+  padding: 2.5rem 3.5rem;
+}
+
+/* Top header bar reminiscent of outer theme header */
+.reveal::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 4.5vh;
+  background: var(--chameleongreen3);
+  z-index: 10;
+}
+
+/* Bottom decorative lines inspired by outer theme footline */
+.reveal::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 3.5vh;
+  background:
+    /* line 1 */
+    linear-gradient(to right, transparent 0 20%, var(--chameleongreen2) 20% 100%) 0 0 / 100% 40% no-repeat,
+    /* line 2 */
+    linear-gradient(to right, var(--chameleongreen3), var(--chameleongreen3)) 0 45% / 100% 30% no-repeat,
+    /* line 3 */
+    linear-gradient(to right, transparent 0 10%, var(--chameleongreen4) 10% 100%) 0 85% / 100% 25% no-repeat;
+  z-index: 10;
+}
+
+/* Ensure the fixed bars don't overlap content too much */
+.reveal .slides section {
+  padding-top: calc(2.5rem + 2vh);
+  padding-bottom: calc(2.5rem + 2vh);
+}
+
+/* Titles: keep readable and closer to beamer vibe */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 1.55em;
+}
+
+.reveal h2 {
+  font-size: 1.25em;
+}
+
+/* Pandoc often emits frame titles as a <p><span>Title</span></p> inside .frame */
+.reveal .frame > p > span {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  margin: 0.2em 0 0.6em;
+  background: var(--chameleongreen2);
+  color: #000;
+  font-weight: 600;
+}
+
+/* Hide empty frames produced by the beamer reader */
+.reveal .frame:empty {
+  display: none;
+}
+
+/* Lists: green markers similar to beamer item color */
+.reveal ul li::marker,
+.reveal ol li::marker {
+  color: var(--chameleongreen3);
+}
+
+/* Block-like environments frequently produced by pandoc */
+.reveal .exampleblock,
+.reveal .block {
+  border-left: 6px solid var(--chameleongreen3);
+  background: rgba(188, 225, 141, 0.22);
+  padding: 0.6em 0.8em;
+  margin: 0.8em 0;
+}
+
+.reveal a {
+  color: var(--chameleongreen4);
+}
+
+.reveal a:hover {
+  color: var(--chameleongreen3);
+}
