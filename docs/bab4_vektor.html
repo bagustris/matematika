@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="@btatmaja Institut Teknologi Sepuluh Nopember">
+  <meta name="dcterms.date" content="2025-12-18">
+  <title>bab4_vektor</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/serif.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">bab4_vektor</h1>
+  <p class="author">@btatmaja<br />
+Institut Teknologi Sepuluh Nopember</p>
+  <p class="date">2025-12-18</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/besaran-vektor" id="/toc-besaran-vektor">Besaran
+vektor</a></li>
+<li><a href="#/dua-vektor-sama" id="/toc-dua-vektor-sama">Dua vektor
+sama</a></li>
+<li><a href="#/jumlah-dua-vektor-veca-vecb"
+id="/toc-jumlah-dua-vektor-veca-vecb">Jumlah dua vektor: <span
+class="math inline">\(\vec{a} + \vec{b}\)</span></a></li>
+<li><a href="#/selisih-dua-vektor-veca---vecb"
+id="/toc-selisih-dua-vektor-veca---vecb">Selisih dua vektor: <span
+class="math inline">\(\vec{a} - \vec{b}\)</span></a></li>
+<li><a href="#/vektor-satuan" id="/toc-vektor-satuan">Vektor
+satuan</a></li>
+<li><a href="#/perkalian-titik-dot-product"
+id="/toc-perkalian-titik-dot-product">Perkalian titik (Dot
+product)</a></li>
+<li><a href="#/perkalian-silang-cross-product"
+id="/toc-perkalian-silang-cross-product">Perkalian silang (Cross
+product)</a></li>
+</ul>
+</nav>
+</section>
+
+<section class="slide level2">
+
+<div class="frame">
+<p><span>Overview</span></p>
+</div>
+</section>
+<section id="besaran-vektor" class="title-slide slide level1">
+<h1>Besaran vektor</h1>
+<div class="frame">
+<p><span>Besaran Vektor</span></p>
+<div class="block">
+<p><span>Besaran</span></p>
+</div>
+<ul>
+<li><p>Vektor: Kuantiti yang memiliki besar dan arah<br />
+Contoh: kecepatan, percepatan, gaya.</p></li>
+<li><p>Skalar: Kuantiti yang hanya memiliki besar saja.<br />
+Contoh: waktu, temperatur, massa, panjang.</p></li>
+</ul>
+<p><img data-src="pict/vektor.png" style="width:1.8in" alt="image" />
+<span class="math inline">\(\overrightarrow{AB} = \vec{a}; ~|\vec{a}| =
+a =\)</span> panjang vektor <span
+class="math inline">\(\vec{a}\)</span></p>
+</div>
+</section>
+
+<section id="dua-vektor-sama" class="title-slide slide level1">
+<h1>Dua vektor sama</h1>
+<div class="frame">
+<p><span>Dua vektor sama</span> <span class="math inline">\(\vec{a} =
+\vec {b} \Longrightarrow\)</span> searah, sama panjang<br />
+</p>
+<div class="center">
+<p><img data-src="pict/duavektor.png" style="width:4in"
+alt="image" /><br />
+</p>
+</div>
+<p><span class="math inline">\(\overrightarrow{-a}\)</span>, sama
+panjang tetapi berlawanan arah dengan <span
+class="math inline">\(\vec{a}\)</span></p>
+</div>
+</section>
+
+<section id="jumlah-dua-vektor-veca-vecb"
+class="title-slide slide level1">
+<h1>Jumlah dua vektor: <span class="math inline">\(\vec{a} +
+\vec{b}\)</span></h1>
+<div class="frame">
+<p><span>Jumlah dua vektor: <span class="math inline">\(\vec{a} +
+\vec{b}\)</span></span> <span class="math inline">\(\longrightarrow
+\vec{b}\)</span> dimulai dari ujung vektor <span
+class="math inline">\(\vec{a}\)</span>, vektor <span
+class="math inline">\(\vec{b} ~\# ~\vec{a}\)</span>, lalu hubungkan
+pangkal <span class="math inline">\(\vec{a}\)</span> dengan ujung <span
+class="math inline">\(\vec{b}\)</span> tsb.</p>
+<div class="center">
+<p><img data-src="pict/jumlahvektor.png" style="width:4in"
+alt="image" /><br />
+</p>
+</div>
+<div class="center">
+
+</div>
+</div>
+</section>
+
+<section id="selisih-dua-vektor-veca---vecb"
+class="title-slide slide level1">
+<h1>Selisih dua vektor: <span class="math inline">\(\vec{a} -
+\vec{b}\)</span></h1>
+<div class="frame">
+<p><span>Selisih dua vektor: <span class="math inline">\(\vec{a} -
+\vec{b}\)</span></span> <span class="math display">\[\vec{a} - \vec {b}
+= \vec{a} + (-\vec{b}) = \vec{a}~~ ditambah~~ -\vec{b}\]</span></p>
+<div class="center">
+<p><img data-src="pict/selisihvektor.png" style="width:4in"
+alt="image" /><br />
+</p>
+</div>
+<div class="center">
+<p>Jika <span class="math inline">\(\vec{a}=\vec{b} \Longrightarrow
+\vec{a}-\vec{b}=\vec{0}\)</span><br />
+Vektor nol, panjang nol, arah tak didefinisikan</p>
+</div>
+</div>
+</section>
+
+<section id="vektor-satuan" class="title-slide slide level1">
+<h1>Vektor satuan</h1>
+<div class="frame">
+<p><span>Vektor Satuan</span> Vektor satuan <span
+class="math inline">\(\vec{i}\)</span>: Vektor dari titik (0,0) sampai
+titik (1,0).<br />
+Vektor satuan <span class="math inline">\(\vec{j}\)</span>: Vektor dari
+titik (0,0) sampai titik (0,1).<br />
+</p>
+<div class="center">
+<p><img data-src="pict/unitVektor.png" style="width:3in"
+alt="image" /></p>
+</div>
+<p><span class="math inline">\(\vec{a}=a_1 \vec{i} + a_2
+\vec{j}\)</span>, Contoh: <span
+class="math inline">\(\vec{a}=3i+2j\)</span></p>
+<div class="center">
+<p><img data-src="pict/unitVektor2.png" style="width:1.4in"
+alt="image" /></p>
+</div>
+</div>
+<div class="frame">
+<p><span>Unit vektor siku-siku</span> <span
+class="math inline">\(|\vec{i}| = |\vec{j}|=|\vec{k}|=1\)</span></p>
+<div class="center">
+<p><img data-src="pict/vektorsiku.png" style="width:4in"
+alt="image" /></p>
+</div>
+<p><span
+class="math inline">\(\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}\)</span><br />
+Vektor posisi <span class="math inline">\(\vec{r}\)</span> dari O ke
+<span class="math inline">\(P(x,y,z)\)</span> adalah:<br />
+<span class="math inline">\(\vec{r} = x\vec{i} + y\vec{j} +
+z\vec{k}\)</span><br />
+dengan panjang <span class="math inline">\(r=\sqrt{x^2+y^2+z^2};
+~~a=|\vec{a}|=\sqrt{a_1^{2}+a_2^{2}+a_3^{2}}\)</span></p>
+</div>
+</section>
+
+<section id="perkalian-titik-dot-product"
+class="title-slide slide level1">
+<h1>Perkalian titik (Dot product)</h1>
+<div class="frame">
+<p><span>Perkalian titik (Dot product)</span></p>
+<div class="columns">
+<p>Definisi: ;   <span
+class="math inline">\((0\leq\theta\leq\pi)\)</span><br />
+<span class="math inline">\(\vec{a}.\vec{b} = \vec{b}.\vec{a}
+\Longrightarrow \vec{i}.\vec{i} =\vec{j}.\vec{j} =\vec{k}.\vec{k}
+=1\)</span><br />
+<span class="math inline">\(\vec{i}.\vec{j} =\vec{j}.\vec{k}
+=\vec{k}.\vec{i} =0\)</span> <img data-src="pict/dotproduct.png"
+style="width:1.5in" alt="image" /><br />
+</p>
+</div>
+<p><span class="math inline">\(\vec{a}=a_1\vec{i}+a_2\vec{j}+a_3\vec{k}
+\Longrightarrow\)</span><br />
+<span
+class="math inline">\(\vec{b}=b_1\vec{i}+b_2\vec{j}+b_3\vec{k}\)</span>
+skalar<br />
+<span class="math display">\[\cos \theta = \dfrac {\vec{a}\vec{b}} {ab}
+=
+\dfrac{a_1b_1+a_2b_2+a_3b_3}{\sqrt{a_1^2+a_2^2+a_3^2}.\sqrt{b_1^2+b_2^2+b_3^2}}\]</span></p>
+</div>
+</section>
+
+<section id="perkalian-silang-cross-product"
+class="title-slide slide level1">
+<h1>Perkalian silang (Cross product)</h1>
+<div class="frame">
+<p><span>Perkalian silang (Cross product)</span></p>
+<div class="columns">
+<p><img data-src="pict/crossproduct.png" style="width:1.5in"
+alt="image" /> <u>Definisi:</u><br />
+<span class="math inline">\(\vec{a}\times\vec{b} = (ab \sin{\theta}
+)~\vec{e}; ~~~0\leq \theta \leq \pi\)</span><br />
+<span class="math inline">\(\theta = \angle(\vec{a}, \vec{b})\)</span>
+diukur dari <span class="math inline">\(\vec{a}\)</span> ke <span
+class="math inline">\(\vec {b}\)</span><br />
+<span class="math inline">\(\vec{e}\)</span> = vektor satuan <span
+class="math inline">\(\perp\)</span> bidangnya <span
+class="math inline">\(\vec{a}\)</span> dan <span
+class="math inline">\(\vec {b}\)</span>.<br />
+</p>
+</div>
+<p><span class="math display">\[\vec{i} \times \vec{i} = \vec{j} \times
+\vec{j} = \vec{k} \times \vec{k}=0\]</span> <span
+class="math display">\[\vec{i}\times \vec{j} =\vec{k};~~~ \vec{j}\times
+\vec{k} =\vec{i};~~~ \vec{k}\times\vec{i} = \vec{j};\]</span> <span
+class="math display">\[\vec{j}\times \vec{i} = -\vec{k};~~~
+\vec{k}\times \vec{j} =-\vec{i};~~~ \vec{i}\times\vec{k} =
+-\vec{j};\]</span></p>
+</div>
+<div class="frame">
+<p><span>Beberapa rumus[1]</span></p>
+<ul>
+<li><p><span>Luas jajaran gejang yang dibentuk <span
+class="math inline">\(\vec{a}\)</span> dan <span
+class="math inline">\(\vec{b}\)</span></span> <img
+data-src="pict/jajar_genjang.png" style="width:1.5in"
+alt="image" /></p></li>
+<li><p><span> Penulisan disingkat</span></p></li>
+</ul>
+</div>
+<div class="frame">
+<p><span>Beberapa rumus[2]</span></p>
+<ul>
+<li><p><span>Tiga vektor <span class="math inline">\(\vec{a} ~~ \vec{b}
+~~ \vec{c}\)</span> membentuk paralelepipedum (balok
+miring)</span></p></li>
+<li><p><span>Rumus</span><br />
+</p>
+<div class="center">
+
+</div></li>
+</ul>
+</div>
+<div class="frame">
+<p><span>Contoh Soal</span></p>
+<ul>
+<li><p><span>Dapatkan sudut antara 2 vektor: <span
+class="math inline">\(\vec{a}= 2 \vec{i} + 2 \vec{j} - \vec{k} ~~dan~~
+                    \vec{b}= 6 \vec{i} - 3 \vec{j} - 2
+\vec{k}\)</span></span></p></li>
+<li><p><span>Jawab:</span><br />
+<span class="math inline">\(\vec{a} = \sqrt{(2)^{2} + (2)^{2}+(-1)^2} =
+1;\)</span><br />
+<span class="math inline">\(\vec{b} = \sqrt{(6)^{2} + (-3)^{2}+(2)^2} =
+1;\)</span><br />
+<span class="math inline">\(\vec{a} \cdot \vec{b} = (2) (6) + (2) (-3) +
+(-1) (2) = 4\)</span><br />
+<span class="math inline">\(\cos~\theta = \dfrac{\vec{a}\vec{b}}{ab}
+=\dfrac{4}{(3)(7)} =0.1905 ~ \Rightarrow ~ \theta =
+79^{o}\)</span></p></li>
+</ul>
+</div>
+<div class="frame">
+<p><span>Soal</span></p>
+<ol>
+<li><p>Diketahui vektor <span class="math inline">\(\vec{a} = 3i +
+4j\)</span> dan vektor <span class="math inline">\(\vec{b} = 2i +
+j\)</span>. Hitunglah harga-harga :</p>
+<ul>
+<li><p><span class="math inline">\(\vec{a} + \vec{b}\)</span></p></li>
+<li><p><span class="math inline">\(\vec b + \vec a\)</span></p></li>
+<li><p><span class="math inline">\(\vec a ~– \vec b\)</span></p></li>
+<li><p><span class="math inline">\(\vec b ~– \vec a\)</span></p></li>
+<li><p><span class="math inline">\(|\vec a|\)</span> dan <span
+class="math inline">\(|\vec b|\)</span></p></li>
+<li><p>sudut <span class="math inline">\(\vec a\)</span></p></li>
+<li><p>sudut <span class="math inline">\(\vec b\)</span></p></li>
+<li><p><span class="math inline">\(\vec a \cdot \vec b\)</span></p></li>
+<li><p><span class="math inline">\(\vec a \times \vec
+b\)</span></p></li>
+</ul></li>
+<li><p>Diketahui vektor-vektor <span class="math inline">\(\vec a ,
+\vec{b}\)</span> dan <span class="math inline">\(\vec{c}\)</span>
+seperti di bawah ini. Lukislah secara grafis operasi vektor :<span
+class="math inline">\(\vec a - \vec{b} +2. \vec c\)</span> dan <span
+class="math inline">\(3 \vec c - 0,5(2 \vec a - \vec b )\)</span>.<br />
+<img data-src="pict/soal2.png" style="width:1.3in"
+alt="image" /></p></li>
+</ol>
+</div>
+<div class="frame">
+<p><span>Cartesian System</span></p>
+<ul>
+<li><p><span>a</span></p></li>
+<li><p><span>b</span></p></li>
+</ul>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: '/usr/share/javascript/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

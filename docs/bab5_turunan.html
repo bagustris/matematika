@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="bagustris">
+  <meta name="dcterms.date" content="2025-12-18">
+  <title>bab5_turunan</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/serif.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">bab5_turunan</h1>
+  <p class="author">bagustris</p>
+  <p class="date">2025-12-18</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/limit-fungsi" id="/toc-limit-fungsi">Limit
+Fungsi</a></li>
+<li><a href="#/turunan" id="/toc-turunan">Turunan</a></li>
+<li><a href="#/logaritma-natural" id="/toc-logaritma-natural">Logaritma
+Natural</a></li>
+<li><a href="#/fungsi-hiperbolik" id="/toc-fungsi-hiperbolik">Fungsi
+Hiperbolik</a></li>
+<li><a href="#/aturan-berantai" id="/toc-aturan-berantai">Aturan
+Berantai</a></li>
+<li><a href="#/turunan-tingkat-tinggi"
+id="/toc-turunan-tingkat-tinggi">Turunan Tingkat Tinggi</a></li>
+<li><a href="#/rumus-leibnitz" id="/toc-rumus-leibnitz">Rumus
+Leibnitz</a></li>
+<li><a href="#/turunan-fungsi-parametrik"
+id="/toc-turunan-fungsi-parametrik">Turunan fungsi parametrik</a></li>
+<li><a href="#/menurunkan-fungsi-implisit"
+id="/toc-menurunkan-fungsi-implisit">Menurunkan Fungsi Implisit</a></li>
+</ul>
+</nav>
+</section>
+
+<section class="slide level2">
+
+<div class="frame">
+<p><span>Overview</span></p>
+</div>
+</section>
+<section id="limit-fungsi" class="title-slide slide level1">
+<h1>Limit Fungsi</h1>
+<div class="frame">
+<p><span>Limit fungsi</span> <u>Definisi:</u><br />
+Fungsi <span class="math inline">\(y=f(x)\)</span> dikatakan mempunyai
+Limit L untuk <span class="math inline">\(x\)</span> mendekati <span
+class="math inline">\(a\)</span> ditulis <span
+class="math display">\[\lim_{x\to a} f(x) = L\]</span> Jika untuk setiap
+bilangan <span class="math inline">\(\varepsilon &gt; 0\)</span> (yang
+bagaimanapun kecilnya) dapat ditunjuk bilangan <span
+class="math inline">\(\delta &gt; 0\)</span> (biasanya bergantung pada
+<span class="math inline">\(\varepsilon\)</span>) sedemikian hingga
+<span class="math inline">\(| f(x) = L | &lt; \varepsilon\)</span> untuk
+<span class="math inline">\(0 &lt; |x -a| &lt; \delta\)</span>.<br />
+Dalil-dalil limit:<br />
+Jika <span class="math inline">\(\lim_{x\to a} f(x) = L\)</span> dan
+<span class="math inline">\(\lim_{x\to a} g(x) = M\)</span> maka :<br />
+</p>
+<ol>
+<li><p><span class="math inline">\(\lim_{x\to a} {f(x) \pm g(x) }= L \pm
+M\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\to a} {f(x) . g(x) }= L .
+M\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\to a} \dfrac{1}{f(x)}=
+\dfrac{1}{L}, ~~jika~ L \neq 0\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\to a} \dfrac{f(x)}{g(x)}=
+\dfrac{L}{M}, ~~jika~ M \neq 0\)</span></p></li>
+</ol>
+</div>
+<div class="frame">
+<p><span>Fungsi Kontinyu</span> <u>Definisi:</u> Suatu fungsi <span
+class="math inline">\(y=f(x)\)</span> dikatakan kontinyu di <span
+class="math inline">\(x=a\)</span> jika</p>
+<ol>
+<li><p>f(a) ada</p></li>
+<li><p><span class="math inline">\(\lim_{x\to a} f(a)=
+ada\)</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\to a} f(x) =
+f(a)\)</span></p></li>
+</ol>
+<p>Tegasnya <span class="math inline">\(f(x)\)</span> disebut kontinyu
+di <span class="math inline">\(x=a\)</span> jika <span
+class="math display">\[\lim_{x\to a} f(x) = f(a)\]</span> ada.<br />
+Jika <span class="math inline">\(f(x)\)</span> kontinyu pada setiap
+titik dari suatu interval maka <span class="math inline">\(f(x)\)</span>
+dikatakan kontinyu pada interval itu.<br />
+Jika satu alasan atau lebih dari syarat-syarat kontinyuitas diatas tidak
+terpenuhi, maka <span class="math inline">\(f(x)\)</span> dikatakan
+diskontinyu di <span class="math inline">\(x=a\)</span>.</p>
+</div>
+</section>
+
+<section id="turunan" class="title-slide slide level1">
+<h1>Turunan</h1>
+<div class="frame">
+<p><span>Turunan fungsi</span></p>
+<ul>
+<li><p>Limit fungsi ketika <span class="math inline">\(x\)</span>
+mendekati nilai a didefinisikan sbg, <span
+class="math display">\[\lim_{x\rightarrow a}f(x)=L\]</span></p></li>
+<li><p>Kalkulus diferensial <span
+class="math inline">\(\rightarrow\)</span> laju perubahan fungsi <span
+class="math inline">\(\Delta f\)</span> terhadap perubahan waktu <span
+class="math inline">\(\Delta x\)</span>.</p></li>
+<li><p>Laju perubahan <span class="math inline">\(\rightarrow\)</span>
+rasio dari perubahan fungsi <span class="math inline">\(\Delta
+f\)</span> terhadap perubahan waktu <span class="math inline">\(\Delta
+x\)</span>.</p></li>
+<li><p>Sepanjang interval <span class="math inline">\(\Delta x\)</span>,
+fungsi berubah dari <span class="math inline">\(f(x)\)</span> menjadi
+<span class="math inline">\(f(x+\Delta x)\)</span>, sehingga <span
+class="math display">\[\Delta f = f(x+\Delta x) - f(x)\]</span></p></li>
+<li><p>Apabila kita memperkecil <span class="math inline">\(\Delta
+x\)</span> maka turunan <span class="math inline">\(\Delta f\)</span> /
+<span class="math inline">\(\Delta x\)</span> sama dengan mencari
+limitnya, <span class="math display">\[\frac{df}{dx}=\lim_{\Delta x
+\rightarrow 0} \frac{\Delta f}{\Delta x}=\lim_{\Delta x \rightarrow 0}
+\frac{f(x + \Delta x)-f(x)}{\Delta x}.\]</span></p></li>
+</ul>
+</div>
+<div class="frame">
+<p><span>Turunan fungsi</span></p>
+<div class="center">
+<p><img data-src="pict/turunan.png" style="width:3in" alt="image" /></p>
+</div>
+</div>
+<div class="frame">
+<p><span>Soal</span> Dengan menggunakan definisi turunan <span
+class="math inline">\(\Bigl( \dfrac{df}{dx}=\lim_{x\to
+0}\dfrac{\Delta{f}}{\Delta{x}}=\dfrac{f(x+h)-f(x)}{h}\Bigr)\)</span>,
+dapatkan turunan dari fungsi berikut:</p>
+<ol>
+<li><p><span class="math inline">\(f(x) = x^2\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = x^3\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = 2x\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = \sin (x)\)</span></p></li>
+</ol>
+</div>
+</section>
+
+<section id="logaritma-natural" class="title-slide slide level1">
+<h1>Logaritma Natural</h1>
+<div class="frame">
+<p><span>Logaritma dan Bilangan Natural</span></p>
+<div class="center">
+<p><span class="math inline">\(\Longrightarrow\)</span> logaritma
+Brigg</p>
+</div>
+<p>Syarat: <span class="math inline">\(a &gt; 0, a \neq 1, b &gt; 0, c
+=\)</span>semua bil. real<br />
+<span class="math inline">\(a\)</span> disebut bilangan pokok bilangan
+logaritma<br />
+Sifat: <span
+class="math display">\[^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^2\log{b}}{^2\log{a}}=\dfrac{^n\log{a}}{^n\log{b}}\]</span>
+Bilangan natural/alam= e = 2.71828183<br />
+<span
+class="math display">\[^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^e\log{b}}{^e\log{a}}=\dfrac{^e\ln{a}}{^e\ln{b}}\]</span>
+<span class="math display">\[^e \log {x} = \ln {x}\]</span></p>
+<div class="center">
+
+</div>
+</div>
+<div class="frame">
+<p><span>Sifat-sifat Turunan</span> Jika <span class="math inline">\(u =
+f(x), v= g(x)\)</span>, maka:<br />
+</p>
+<ol>
+<li><p><span class="math inline">\(y = u \pm v \Longrightarrow y&#39;=
+u&#39; \pm v&#39;\)</span></p></li>
+<li><p><span class="math inline">\(y = uv \Longrightarrow y&#39;=u&#39;v
++ uv&#39;\)</span></p></li>
+<li><p><span class="math inline">\(y = \dfrac{u}{v} \Longrightarrow
+y&#39;=\dfrac{u&#39;v-uv&#39;}{v^2}\)</span></p></li>
+<li><p><span class="math inline">\(y=u^v \Longrightarrow
+y&#39;=u^v\bigl(v&#39; \ln u+v \dfrac{u&#39;}{u}\bigr)\)</span></p></li>
+</ol>
+<p>Beberapa rumus turunan[1]:</p>
+<ol>
+<li><p><span class="math inline">\(y=C \Longrightarrow
+y&#39;=0\)</span></p></li>
+<li><p><span class="math inline">\(y = x^n \Longrightarrow
+y&#39;=nx^{n-1}\)</span></p></li>
+<li><p><span class="math inline">\(y=e^x \Longrightarrow
+y&#39;=e^x\)</span></p></li>
+<li><p><span class="math inline">\(y=\ln x \Longrightarrow
+y&#39;=\dfrac{1}{x}\)</span></p></li>
+<li><p><span class="math inline">\(y= ^a\log x \Longrightarrow y&#39;=
+\dfrac{1}{x \ln a}\)</span></p></li>
+<li><p><span class="math inline">\(y= a^x; (a&gt;0, a \neq 1)
+\Longrightarrow y&#39;=a^x \ln a\)</span></p></li>
+</ol>
+</div>
+<div class="frame">
+<p><span>Beberapa Rumus Turunan[2]</span></p>
+<ol>
+<li><p><span class="math inline">\(y=\sin{x} \Longrightarrow y&#39;=\cos
+x\)</span></p></li>
+<li><p><span class="math inline">\(y=\cos x \Longrightarrow y&#39;= -
+\sin x\)</span></p></li>
+<li><p><span class="math inline">\(y= \tan x \Longrightarrow
+y&#39;=\sec^2 x\)</span></p></li>
+<li><p><span class="math inline">\(y= \cot x \Longrightarrow y&#39; =
+-\csc ^2 x\)</span></p></li>
+<li><p><span class="math inline">\(y= \sec x \Longrightarrow y&#39; =
+\sec x \tan x\)</span></p></li>
+<li><p><span class="math inline">\(y= \csc x \Longrightarrow y&#39;= -
+\csc x \cot x\)</span></p></li>
+<li><p><span class="math inline">\(y= \ln |\sin x| \Longrightarrow
+y&#39;= \cot x\)</span></p></li>
+<li><p><span class="math inline">\(y= \ln |\cos x| \Longrightarrow
+y&#39;= - \tan x\)</span></p></li>
+<li><p><span class="math inline">\(y= \ln |\sec x + \tan x|
+\Longrightarrow y&#39;= \sec x\)</span></p></li>
+<li><p><span class="math inline">\(y= \ln |\csc x - \cot x|
+\Longrightarrow y&#39;= \csc x\)</span></p></li>
+<li><p><span class="math inline">\(y= \ln | x + \sqrt{x^2 \pm a} |
+\Longrightarrow y&#39;= \dfrac{1}{\sqrt{x^2\pm a}}\)</span></p></li>
+</ol>
+</div>
+<div class="frame">
+<p><span>Beberapa Rumus Turunan[3]</span></p>
+<ol>
+<li><p><span class="math inline">\(y= \arcsin x \Longrightarrow y&#39;=
+\dfrac{1}{\sqrt{1-x^2}}\)</span></p></li>
+<li><p><span class="math inline">\(y= \arccos x \Longrightarrow y&#39;=
+\dfrac{-1}{\sqrt{1-x^2}}\)</span></p></li>
+<li><p><span class="math inline">\(y= \arctan x \Longrightarrow y&#39;=
+\dfrac{1}{1+x^2}\)</span></p></li>
+<li><p><span class="math inline">\(y= arccot ~x \Longrightarrow y&#39;=
+\dfrac{-1}{1+x^2}\)</span></p></li>
+<li><p><span class="math inline">\(y= arcsec ~x \Longrightarrow y&#39;=
+\dfrac{1}{x \sqrt{x^2-1}}\)</span></p></li>
+<li><p><span class="math inline">\(y= arccsc ~x \Longrightarrow y&#39;=
+\dfrac{-1}{x \sqrt{x^2-1}}\)</span></p></li>
+</ol>
+</div>
+</section>
+
+<section id="fungsi-hiperbolik" class="title-slide slide level1">
+<h1>Fungsi Hiperbolik</h1>
+<div class="frame">
+<p><span>Fungsi Hiperbolik</span> Definisi:<br />
+<span class="math display">\[\sinh x=\dfrac{1}{2}(e^x - e^
+{-x})\]</span><br />
+<span class="math display">\[\cosh x=\dfrac{1}{2}(e^x + e^
+{-x})\]</span><br />
+Sifat-sifat:<br />
+</p>
+<ol>
+<li><p><span class="math inline">\(\cosh^2 x - \sinh^2
+x=1\)</span></p></li>
+<li><p><span class="math inline">\(\sinh (x \pm y) = \sinh x \cosh y \pm
+\cosh x \sinh y\)</span></p></li>
+<li><p><span class="math inline">\(\cosh (x \pm y) = \cosh x \cosh y \pm
+\sinh x \sinh y\)</span></p></li>
+</ol>
+<p>Turunan:<br />
+</p>
+<ol>
+<li><p><span class="math inline">\(y=\sinh x \Longrightarrow
+y&#39;=\cosh x\)</span></p></li>
+<li><p><span class="math inline">\(y=\cosh x \Longrightarrow
+y&#39;=\sinh x\)</span></p></li>
+<li><p><span class="math inline">\(y=\tanh x \Longrightarrow y&#39;=sech
+^2 x\)</span></p></li>
+</ol>
+</div>
+</section>
+
+<section id="aturan-berantai" class="title-slide slide level1">
+<h1>Aturan Berantai</h1>
+<div class="frame">
+<p><span>Aturan berantai</span> Jika <span
+class="math inline">\(y=f(u)\)</span> dan <span
+class="math inline">\(u=g(x)\)</span> maka:<br />
+<span
+class="math display">\[\dfrac{dy}{dx}=\dfrac{dy}{du}.\dfrac{du}{dx}\]</span>
+Jika <span class="math inline">\(y=f(u)\)</span>, <span
+class="math inline">\(u=g(v)\)</span> dan <span
+class="math inline">\(v=h(x)\)</span> maka:<br />
+<span
+class="math display">\[\dfrac{dy}{dx}=\dfrac{dy}{du}.\dfrac{du}{dv}.\dfrac{dv}{dx}\]</span>
+<u>Soal:</u><br />
+</p>
+<ol>
+<li><p><span class="math inline">\(y=(2x+5)^5 \Longrightarrow~
+y&#39;=...?\)</span></p></li>
+<li><p><span class="math inline">\(y=(x^2+2)^4 \Longrightarrow~
+y&#39;=...?\)</span></p></li>
+</ol>
+</div>
+</section>
+
+<section id="turunan-tingkat-tinggi" class="title-slide slide level1">
+<h1>Turunan Tingkat Tinggi</h1>
+<div class="frame">
+<p><span>Turunan tingkat tinggi</span> <span
+class="math inline">\(y=f(x) \Longrightarrow\)</span> turunan ke 1
+terhadap x adalah <span
+class="math inline">\(y&#39;=f&#39;(x)\)</span><br />
+turunan ke 2 terhadap x adalah <span
+class="math inline">\(y&#39;&#39;=y^{(2)}=f^{(2)}(x)\)</span><br />
+turunan ke 3 terhadap x adalah <span
+class="math inline">\(y&#39;&#39;&#39;=y^{(3)}=f^{(3}(x)\)</span><br />
+...dst<br />
+turunan ke n terhadap x adalah <span
+class="math inline">\(y^{(n)}=f^{(n)}(x)\)</span><br />
+<u>Soal:</u><br />
+</p>
+<ol>
+<li><p><span class="math inline">\(y=e^{ax} \rightarrow
+y^{(n)}=....?\)</span></p></li>
+<li><p><span class="math inline">\(y=\sin x\rightarrow
+y^{(n)}=....?\)</span></p></li>
+</ol>
+</div>
+</section>
+
+<section id="rumus-leibnitz" class="title-slide slide level1">
+<h1>Rumus Leibnitz</h1>
+<div class="frame">
+<p><span>Rumus Leibnitz</span> <span
+class="math inline">\(D=\dfrac{d}{dx}\)</span> operator turunan; <span
+class="math inline">\(D^2=\dfrac{d^2}{dx^2}\)</span>;<br />
+<span class="math display">\[D=\dfrac{d}{dx} \rightarrow
+~operator~turunan~tingkat~n\]</span> Jika <span
+class="math inline">\(y=UV\)</span> dimana <span
+class="math inline">\(U=f(x)\)</span> dan <span
+class="math inline">\(V=g(x)\)</span> maka turunan <span
+class="math inline">\(n\)</span> dari <span
+class="math inline">\(y\)</span> terhadap <span
+class="math inline">\(x\)</span> dinyatakan dengan <span
+class="math inline">\(y^({n)}=D^n(UV)\)</span> dan dirumuskan sbb: <span
+class="math display">\[\begin{gathered}
+y^n(UV)=UD^nV+nDUD^{n-1}V+\dfrac{1}{2!}n(n-1)D^2UD^{n-2}V+\\
+\dfrac{1}{3!}n(n-1)D^3UD^{n-3}V+...
+\end{gathered}\]</span> Bukti:<br />
+<span class="math inline">\(y=UV \Longrightarrow
+y&#39;=UV&#39;+U&#39;V\)</span><br />
+<span
+class="math inline">\(y&quot;=UV&quot;+2U&#39;V&#39;+U&quot;V\)</span><br />
+<span
+class="math inline">\(y^{(3)}=UV^{(3)}+3U&#39;V^{(2)}+3U^{(2)V&#39;}+U^{(3)}V\)</span></p>
+</div>
+</section>
+
+<section id="turunan-fungsi-parametrik"
+class="title-slide slide level1">
+<h1>Turunan fungsi parametrik</h1>
+<div class="frame">
+<p><span>Turunan fungsi parametrik</span> Jika <span
+class="math inline">\(x=f(t)\)</span> dan <span
+class="math inline">\(y=g(t)\)</span> maka,<br />
+</p>
+<div class="center">
+
+</div>
+<p><span
+class="math display">\[y^{(n)}=\dfrac{\dfrac{dy^{(n-1)}}{dt}}{\dfrac{dx}{dt}}\]</span>
+<u>Soal:</u><br />
+Dapatkan <span class="math inline">\(y&quot;\)</span> dari <span
+class="math inline">\(x = a \cos t\)</span> dan <span
+class="math inline">\(y= b \sin t\)</span></p>
+</div>
+</section>
+
+<section id="menurunkan-fungsi-implisit"
+class="title-slide slide level1">
+<h1>Menurunkan Fungsi Implisit</h1>
+<div class="frame">
+<p><span>Menurunkan fungsi implisit</span> <span
+class="math inline">\(y&#39;\)</span> dari <span
+class="math inline">\(f(x,y) = 0\)</span> didapat sebagai berikut:</p>
+<ol>
+<li><p>Jika mungkin <span class="math inline">\(y\)</span> dinyatakan
+sebagai fungsi explisit dalam x<br />
+Contoh: <span class="math inline">\(x^2+y-3=0 \Longrightarrow
+y=3-x^2\)</span><br />
+<span class="math inline">\(y&#39;=-2x\)</span></p></li>
+<li><p>Setiap suku dalam <span class="math inline">\(f(x,y)=0\)</span>
+diturunkan terhadap x. Karena <span class="math inline">\(y\)</span>
+fungsi <span class="math inline">\(x\)</span> maka setiap kali
+menurunkan <span class="math inline">\(y\)</span> harus digandakan
+dengan <span class="math inline">\(y&#39;\)</span>, kemudian hubungan
+yang didapat diselesaikan ke <span
+class="math inline">\(y&#39;\)</span>.<br />
+Contoh:<br />
+<span class="math inline">\(x^3+y^3-3axy=0\)</span><br />
+<span class="math inline">\(3x^2+3y^2y^1-3a(y+xy&#39;)=0\)</span><br />
+<span class="math inline">\(3(ax-y^2)y^1=3(x^2-ay) \Longrightarrow
+y&#39;=\dfrac{x^2-ay}{ax-ay}\)</span></p></li>
+</ol>
+</div>
+<div class="frame">
+<p><span>Soal</span> Dapatkan <span
+class="math inline">\(y&#39;\)</span> dari:</p>
+<ul>
+<li><p><span class="math inline">\(y=x \sinh{x}\)</span></p></li>
+<li><p><span class="math inline">\(y=\ln\sqrt{2x+1}\)</span></p></li>
+<li><p><span class="math inline">\(y=e^{2x+y} +
+\sin({x+2y})\)</span></p></li>
+<li><p><span
+class="math inline">\(y=\ln{\dfrac{x+1}{x-1}}\)</span></p></li>
+</ul>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: '/usr/share/javascript/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
