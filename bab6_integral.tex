@@ -12,7 +12,7 @@
 
 \title{Integral}
 \author{Bagus Tris Atmaja}
-\date{\today}
+\date{2017}
 
 \begin{document}
 	\frame{\titlepage}
@@ -29,7 +29,7 @@
 Integral: \\
 \begin{itemize}
 \item \underline{tak tertentu}: Jika $f(x)$ ditentukan maka setiap fungsi $F(x)$ hingga $F'(x) = f(x)$ disebut Integral tak tertentu dari $f(x)$ dituliskan $\int f(x)= F(x) + C$.\\
-\vskip5pt Contoh: $x^3, x^3-2, x^3+1$ adalah integral tak tertentu dari $f(x)=3x^2$, dituliskan $\int 3x dx= x^3 + C$
+\vskip5pt Contoh: $x^3, x^3-2, x^3+1$ adalah integral tak tertentu dari $f(x)=3x^2$, dituliskan $\int 3x^2 dx= x^3 + C$
 \vskip10pt
 \item \underline{tertentu}: Jika $f(x)$ fungsi kontinyu pada $[a, b]$ maka dikatakan bahwa $f(x)$ terintegralkan (\emph{integrable}) pada $[a, b]$ dan disebut integral tertentu dan dinyatakan dengan $\int \limits_a^{b}f(x) dx$.
 \end{itemize}
@@ -60,7 +60,7 @@ Bukti: Untuk sisi kiri, $ \dfrac {d \bigl[\int \{ f(x) \pm g(x) \} dx \bigr]} {d
 \item $\int x^n dx= \dfrac{1}{n+1} x^{n+1} +C;~~(n\neq -1)$
 \item $\int \dfrac{1}{x} dx = \ln |x| + C$
 \item $\int e^xdx = e^x + C$
-\item $\int a^x dx = \dfrac {a^x} {\ln x} + C$
+\item $\int a^x dx = \dfrac {a^x} {\ln a} + C$
 \item $\int \sin x dx = - \cos x + C$
 \item $\int \cos x dx = \sin x + C$
 \item $\int \tan x dx = \ln | \sec x | + C$
@@ -123,7 +123,7 @@ Contoh: \\
 \begin{frame}[t, fragile]{Penerapan $1/D$ pada integral tak tertentu}
 $$D= \dfrac{d}{dx}~~operator~ derivatif$$ \\
 $\dfrac{1}{D} = D^{-1} = \int ... dx$ operator integral\\
-$\dfrac{1}{1-D}=1 + D+ D^2+ ...; \Longrightarrow \dfrac{1}{1+D} = 1 - D - D^2-...$\\
+$\dfrac{1}{1-D}=1 + D+ D^2+ ...; \Longrightarrow \dfrac{1}{1+D} = 1 - D + D^2-...$\\
 \vskip5pt
 $D \sin ax = a \cos ax$; \fbox{$D^2 \sin ax = -a^2 \sin ax$} \\
 $D \cos ax = -a \sin ax$; \fbox{$D^2 \cos ax = -a^2 \cos ax$} \\
@@ -139,9 +139,9 @@ $(D^2-b^2) \cos ax = (-a^2 - b^2) \cos ax$, sehingga:\\
 \begin{frame}[t, fragile]{Rumus: \fbox{$\dfrac{1}{D}{e^{ax}V}=e^{ax} \dfrac{1}{(D+a)}V$}}
 Bukti :
 $$D(e^{ax} U) = ae^{ax} U + e^{ax} DU$$
-$$D(e^{ax} U) = e^ax(D + a) U$$ 
+$$D(e^{ax} U) = e^{ax}(D + a) U$$ 
 
-$$D\Bigl\{e^{ax}\dfrac{1}{(D+a)}V\Bigr\} = ea^{ax} V$$
+$$D\Bigl\{e^{ax}\dfrac{1}{(D+a)}V\Bigr\} = e^{ax} V$$
 
 Misal:
 $$(D+a) U = V \Longrightarrow U = \dfrac{1}{D+a} V$$
@@ -155,7 +155,7 @@ $\int e^{2x}(2x^2-4x+8)dx = \dfrac{1}{D}e^{2x}(2x^2-4x+8)$
 
 \begin{frame}[t, fragile]{Rumus: \fbox{$\dfrac{1}{D}{x~V}=\bigl(x - \dfrac{1}{D}\bigr) \dfrac{1}{D}V$}}
 Bukti:\\
-$D(x~U) = x ~DU + U$      Misal : $DU = V \rightarrow U= \dfrac{1}{D}$
+$D(x~U) = x ~DU + U$      Misal : $DU = V \rightarrow U= \dfrac{1}{D}V$
 
 \begin{align*}
 D(x \dfrac{1}{D}xV) &= x V + \dfrac{1}{D}V \\
@@ -171,10 +171,10 @@ $\int x e^x \cos 2x dx=...$
 Bukti:\\
 Jika $y = UV$ dimana $U=f(x)$ dan $v=g(x)$ maka turunan tingkat ke $n$,\\
 $y^{(n)} = D^{(n)} (UV)$ dirumuskan oleh Leibnitz sbb:
-$D^{(n)} = UD^nV + nDUD^{n-1}V+\dfrac{1}{D^2!} n(n-1)D^2UD^{n-2}V+\dfrac{1}{D^3!} n(n-1)(n-2)D^3UD^{n-3}V+..$\\
+$D^{(n)} = UD^nV + nDUD^{n-1}V+\dfrac{1}{2!} n(n-1)D^2UD^{n-2}V+\dfrac{1}{3!} n(n-1)(n-2)D^3UD^{n-3}V+..$\\
 \vskip10pt
 Dengan memasang n=-1, maka: \\
-$\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac{1}{D^4}V+...$
+$\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D^2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac{1}{D^4}V+...$
 
 \end{frame}
 
@@ -186,8 +186,8 @@ $\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac
 \begin{frame}[t, fragile]{Integrasi fungsi pecah rasional}
 \begin{enumerate}
 \item Jika $N(x) = (ax + b)(cx + d)$ maka dibawa ke bentuk $\dfrac{A}{ax+b} + \dfrac{B}{cx+d}$. 
-\item Jika $N(x) = (ax+b)^2(cx+d)$ maka dibawa ke bentuk $\dfrac{A}{ax+b} + \dfrac{B}{ax+b}^2$. 
-\item Jika $N(x) = (ax^2+bx+c)$ dengan $D<$ maka dibawa ke bentuk $\dfrac{A}{cx+d} + \dfrac{Bx+C}{ax^2+b}$.
+\item Jika $N(x) = (ax+b)^2(cx+d)$ maka dibawa ke bentuk $\dfrac{A}{ax+b} + \dfrac{B}{(ax+b)^2}$. 
+\item Jika $N(x) = (ax^2+bx+c)$ dengan $D<0$ maka dibawa ke bentuk $\dfrac{A}{cx+d} + \dfrac{Bx+C}{ax^2+bx+c}$.
 \end{enumerate}
 \begin{block}{Contoh:}
 \begin{enumerate}
@@ -205,7 +205,7 @@ $\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac
 \item $\sin{2x} = 2 \sin{x} \cos {x}$
 \item $\cos{2x} = \cos^2x - \sin^2x$
 \item $\sin^2x =\dfrac{1}{2}(1-\cos{2x})$
-\item $\cos^2x =\dfrac1{1}{2}(1+\cos{2x})$
+\item $\cos^2x =\dfrac{1}{2}(1+\cos{2x})$
 \item $\sin(-x) = - \sin{x}; ~~ \cos{-x}= \cos{x}$
 \item $\sin {\alpha x} \cos {\beta x} = \dfrac{1}{2}\bigl\{\sin(\alpha+\beta)x+\sin(\alpha-\beta)x\bigr\}$
 \item $\cos {\alpha x} \sin {\beta x} = \dfrac{1}{2}\bigl\{\sin(\alpha+\beta)x-\sin(\alpha-\beta)x\bigr\}$
@@ -215,7 +215,7 @@ $\dfrac{1}{D}(UV)=U\dfrac{1}{D}V-DU\dfrac{1}{D2}V+D^2U\dfrac{1}{D^3}V-D^3U\dfrac
 \end{frame}
 
 \begin{frame}[t, fragile]{Integrasi fungsi trigonometri[1]}
-Bentuk: \fbox{$\int \alpha x \cos \beta x dx; ~ \int \cos \alpha x \sin \beta x dx; ~ \int \sin \alpha x \beta x dx$}
+Bentuk: \fbox{$\int \sin \alpha x \cos \beta x dx; ~ \int \cos \alpha x \sin \beta x dx; ~ \int \sin \alpha x \sin \beta x dx$}
 \begin{center}
 \includegraphics[width=4.55in]{pict/integraltrigono.png}
 \end{center}
@@ -226,11 +226,11 @@ $\int \sin {5x} \cos {x} dx$
 \begin{frame}[t, fragile]{Integrasi fungsi trigonometri[2]}
 \begin{itemize}
 \item Bentuk: \fbox{$\int R (\sin x, \cos x) dx $}; R= fungsi rasional \\
-\vskip3pt Subtitusi : $\tan\dfrac{x}{2}=t \Longrightarrow \dfrac{x}{2} = \arctan {t}, \rightarrow x= 2 \arctan{x}$\\
+\vskip3pt Subtitusi : $\tan\dfrac{x}{2}=t \Longrightarrow \dfrac{x}{2} = \arctan {t}, \rightarrow x= 2 \arctan{t}$\\
 $$dx=\dfrac{2dt}{1+t^2}; \sin{x}=\dfrac{2t}{1+t^2}; \cos{x}=\dfrac{1-t^2}{1+t^2}$$
-Maka: $\int R (\sin x, \cos x) dx = \int R (\dfrac{2t}{1+t^2}.\dfrac{1-t^2}{1+t^2})\dfrac{2dt}{1+t^2}$
-\item Bentuk: \fbox{$R(\sin{x}, cos{x}) dx = \int R (-\sin{x}, -\cos{x} )dx$} \\
-\vskip5pt Subtitusi: $\tan{x} = t \Longrightarrow x=\arctan{t} \rightarrow \cos{x}=\dfrac{1}{\sqrt{1+x^2}}$
+Maka: $\int R (\sin x, \cos x) dx = \int R (\dfrac{2t}{1+t^2}, \dfrac{1-t^2}{1+t^2})\dfrac{2dt}{1+t^2}$
+\item Bentuk: \fbox{$R(\sin{x}, \cos{x}) dx = \int R (-\sin{x}, -\cos{x} )dx$} \\
+\vskip5pt Subtitusi: $\tan{x} = t \Longrightarrow x=\arctan{t} \rightarrow \cos{x}=\dfrac{1}{\sqrt{1+t^2}}$
 \item Bentuk: \fbox{$R(\tan{x})dx$ }\\
 Subtitusi: $\tan {x} = t \Longrightarrow x=\arctan{t} \rightarrow dx = \dfrac{dt}{1+t^2}$
 \end{itemize}
@@ -239,7 +239,7 @@ Subtitusi: $\tan {x} = t \Longrightarrow x=\arctan{t} \rightarrow dx = \dfrac{dt
 \begin{frame}[t,fragile]{Contoh:}
 \begin{enumerate}
 \item $I=\int \dfrac{dx}{5+4\cos{x}}$
-\item $I=\int {dx}{\sin^2x-\sin x \cos x}$
+\item $I=\int \dfrac{dx}{\sin^2x-\sin x \cos x}$
 \item $I=\int \dfrac{1+\tan{x}}{1-\tan{x}}dx$
 \end{enumerate}
 \end{frame}

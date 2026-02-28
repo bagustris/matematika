@@ -10,7 +10,7 @@
 
 \title{Turunan Fungsi}
 \author{bagustris}
-\date{\today}
+\date{2017}
 \begin{document}
 	\frame{\titlepage}
 	% \frame{
@@ -26,7 +26,7 @@
 \begin{frame}[t, fragile] {Limit fungsi}
 \underline{Definisi:} \\
 Fungsi $y=f(x)$ dikatakan mempunyai Limit L untuk $x$ mendekati $a$ ditulis  $$\lim_{x\to a} f(x) = L$$ 
-Jika untuk setiap bilangan $\varepsilon > 0$ (yang bagaimanapun kecilnya) dapat ditunjuk bilangan $\delta > 0$ (biasanya bergantung pada $\varepsilon$) sedemikian hingga $| f(x) = L | < \varepsilon$ untuk $ 0 < |x -a| < \delta$.\\
+Jika untuk setiap bilangan $\varepsilon > 0$ (yang bagaimanapun kecilnya) dapat ditunjuk bilangan $\delta > 0$ (biasanya bergantung pada $\varepsilon$) sedemikian hingga $| f(x) - L | < \varepsilon$ untuk $ 0 < |x -a| < \delta$.\\
 \vskip5pt
 Dalil-dalil limit: \\
 Jika $\lim_{x\to a} f(x) = L$ dan $\lim_{x\to a} g(x) = M$ maka : \\
@@ -81,7 +81,7 @@ $$\frac{df}{dx}=\lim_{\Delta x \rightarrow 0} \frac{\Delta f}{\Delta x}=\lim_{\D
 \end{frame}
 
 \begin{frame}[t, fragile]{Soal}
-Dengan menggunakan definisi turunan  $\Bigl( \dfrac{df}{dx}=\lim_{x\to 0}\dfrac{\Delta{f}}{\Delta{x}}=\dfrac{f(x+h)-f(x)}{h}\Bigr)$, dapatkan turunan dari fungsi berikut:
+Dengan menggunakan definisi turunan  $\Bigl( \dfrac{df}{dx}=\lim_{h\to 0}\dfrac{\Delta{f}}{\Delta{x}}=\dfrac{f(x+h)-f(x)}{h}\Bigr)$, dapatkan turunan dari fungsi berikut:
 \begin{enumerate}
 \item $f(x) = x^2$
 \item $f(x) = x^3$
@@ -98,9 +98,9 @@ Dengan menggunakan definisi turunan  $\Bigl( \dfrac{df}{dx}=\lim_{x\to 0}\dfrac{
 Syarat: $a > 0, a \neq 1, b > 0, c = $semua bil. real \\
 \hspace{33px} $a$ disebut bilangan pokok bilangan logaritma \\
 Sifat:
-$$^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^2\log{b}}{^2\log{a}}=\dfrac{^n\log{a}}{^n\log{b}}$$
+$$^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^2\log{b}}{^2\log{a}}=\dfrac{^n\log{b}}{^n\log{a}}$$
 Bilangan natural/alam= e = 2.71828183 \\
-$$^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^e\log{b}}{^e\log{a}}=\dfrac{^e\ln{a}}{^e\ln{b}}$$
+$$^a\log{b}=\dfrac{\log{b}}{\log{a}}=\dfrac{^e\log{b}}{^e\log{a}}=\dfrac{\ln{b}}{\ln{a}}$$
 $$^e \log {x} = \ln {x}$$
 \begin{center}\fbox{$y=\ln[f(x)] \rightarrow y'=\dfrac{f'(x)}{f(x)}$}
 \end{center}
@@ -139,7 +139,7 @@ Beberapa rumus turunan[1]:
 \item $y= \ln |\cos x| \Longrightarrow y'= - \tan x$
 \item $y= \ln |\sec x + \tan x| \Longrightarrow y'= \sec x$
 \item $y= \ln |\csc x - \cot x| \Longrightarrow y'= \csc x$
-\item $y= \ln | x + \sqrt{x^2 \pm a} | \Longrightarrow y'= \dfrac{1}{\sqrt{x^2\pm a}}$
+\item $y= \ln | x + \sqrt{x^2 \pm a^2} | \Longrightarrow y'= \dfrac{1}{\sqrt{x^2\pm a^2}}$
 \seti
 \end{enumerate}
 \end{frame}
@@ -192,7 +192,7 @@ $$\dfrac{dy}{dx}=\dfrac{dy}{du}.\dfrac{du}{dv}.\dfrac{dv}{dx}$$
 \begin{frame}[t, fragile]{Turunan tingkat tinggi}
 $y=f(x) \Longrightarrow$ turunan ke 1 terhadap x adalah $ y'=f'(x)$\\
 \hspace*{62px} turunan ke 2 terhadap x adalah $ y''=y^{(2)}=f^{(2)}(x)$\\
-\hspace*{62px} turunan ke 3 terhadap x adalah $ y'''=y^{(3)}=f^{(3}(x)$\\
+\hspace*{62px} turunan ke 3 terhadap x adalah $ y'''=y^{(3)}=f^{(3)}(x)$\\
 \hspace*{62px} ...dst \\
 \hspace*{62px} turunan ke n terhadap x adalah $y^{(n)}=f^{(n)}(x)$\\
 \underline{Soal:}\\
@@ -206,7 +206,7 @@ $y=f(x) \Longrightarrow$ turunan ke 1 terhadap x adalah $ y'=f'(x)$\\
 \begin{frame}[t, fragile]{Rumus Leibnitz}
 $D=\dfrac{d}{dx}$ operator turunan; $D^2=\dfrac{d^2}{dx^2}$;\\
 $$D=\dfrac{d}{dx} \rightarrow ~operator~turunan~tingkat~n$$
-Jika $y=UV$ dimana $U=f(x)$ dan $V=g(x)$ maka turunan $n$ dari $y$ terhadap $x$ dinyatakan dengan $y^({n)}=D^n(UV)$ dan dirumuskan sbb:
+Jika $y=UV$ dimana $U=f(x)$ dan $V=g(x)$ maka turunan $n$ dari $y$ terhadap $x$ dinyatakan dengan $y^{(n)}=D^n(UV)$ dan dirumuskan sbb:
 \begin{multline}
 y^n(UV)=UD^nV+nDUD^{n-1}V+\dfrac{1}{2!}n(n-1)D^2UD^{n-2}V+\\
 \dfrac{1}{3!}n(n-1)D^3UD^{n-3}V+...
@@ -214,7 +214,7 @@ y^n(UV)=UD^nV+nDUD^{n-1}V+\dfrac{1}{2!}n(n-1)D^2UD^{n-2}V+\\
 Bukti:\\
 $y=UV \Longrightarrow y'=UV'+U'V$ \\
 \hspace{60px}$y"=UV"+2U'V'+U"V$\\
-\hspace{60px}$y^{(3)}=UV^{(3)}+3U'V^{(2)}+3U^{(2)V'}+U^{(3)}V$
+\hspace{60px}$y^{(3)}=UV^{(3)}+3U'V^{(2)}+3U^{(2)}V'+U^{(3)}V$
 \end{frame}
 
 \section{Turunan fungsi parametrik}
@@ -238,8 +238,8 @@ $y'$ dari $f(x,y) = 0$ didapat sebagai berikut:
 \item Setiap suku dalam $f(x,y)=0$ diturunkan terhadap x. Karena $y$ fungsi $x$ maka setiap kali menurunkan $y$ harus digandakan dengan $y'$, kemudian hubungan yang didapat diselesaikan ke $y'$.\\
       Contoh:\\
       $x^3+y^3-3axy=0 $\\
-      $3x^2+3y^2y^1-3a(y+xy')=0$\\
-      $3(ax-y^2)y^1=3(x^2-ay) \Longrightarrow y'=\dfrac{x^2-ay}{ax-ay}$
+      $3x^2+3y^2y'-3a(y+xy')=0$\\
+      $3(ax-y^2)y'=3(x^2-ay) \Longrightarrow y'=\dfrac{x^2-ay}{ax-y^2}$
 \end{enumerate}
 \end{frame}
 

@@ -24,7 +24,7 @@
 \author{Bagus Tris Atmaja\\bagus@ep.its.ac.id}
 \title{REVIEW MATEMATIKA SMA}
 \institute{Institut Teknologi Sepuluh Nopember}
-\date{\today}
+\date{2017}
 
 \begin{document}
 
@@ -55,7 +55,7 @@
 %    \column{.5\textwidth}
         \begin{itemize}
         \item $ a^{m} . a^{n} =a^{m+n} $ \\
-        \item $ (ab)^{n} = a^{n}+b^{n} $ \\
+        \item $ (ab)^{n} = a^{n} \cdot b^{n} $ \\
 %        \end{itemize}
 %    \column{.5\textwidth}
 %        \begin{itemize}
@@ -136,7 +136,7 @@ Dimana $D = b^2 - 4ac$ (diskriminan)
 \item Fungsi Kuadrat disebut \emph{definit negatif} jika grafik seluruhnya berada 
       di bawah sb x; Syaratnya: \hspace{0.05in}           (1) $a < 0$
                             
-      \hspace{1.76in}          (2) $D > 0$
+      \hspace{1.76in}          (2) $D < 0$
 \end{enumerate}
 \end {frame}
 
@@ -144,7 +144,7 @@ Dimana $D = b^2 - 4ac$ (diskriminan)
 \begin{frame}[t,fragile]{Logaritma}
 \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\centering 
         $^{a}\log{b}=c$ artinya: $a^c=b$\\
-        syarat: $b > 0$, $a > 0$, $a \neq a$.\\
+        syarat: $b > 0$, $a > 0$, $a \neq 1$.\\
         $a$ disebut bilangan pokok.}}
 \vskip12pt
 Sifat-sifat:
@@ -155,7 +155,7 @@ Sifat-sifat:
     \item $^{a}\log{a}=1$
     \item $^{P}\log{a}+^{P}\log{b}=^{P}\log{ab}$
     \item $^{P}\log{a}-^{P}\log{b}=^{P}\log{\frac{a}{b}}$
-    \item $^{P}\log{a^n} = n ^{a}\log{a}$
+    \item $^{P}\log{a^n} = n \cdot {^{P}\log{a}}$
     \item $^{a}\log{a^n} = n$
     \item $^{a}\log{1} = 0$
     \seti
@@ -163,10 +163,10 @@ Sifat-sifat:
 \column{.5\textwidth}
 \begin{enumerate}
     \conti
-    \item ${^{a}\log{b}}=\frac{^{P}\log{a}}{^{P}\log{b}}$
+    \item ${^{a}\log{b}}=\frac{^{P}\log{b}}{^{P}\log{a}}$
     \item $^{a}\log{b}^{b}\log{c}=^{a}\log{c}$
-    \item $^{a}\log{b}^{b}\log{c}=1$
-    \item $^{a}\log{\sqrt[n]{b}=\frac{1}{n}^{a}\log{b}}$
+    \item $^{a}\log{b} \cdot {^{b}\log{a}}=1$
+    \item $^{a}\log{\sqrt[n]{b}}=\frac{1}{n} \cdot {^{a}\log{b}}$
     \item $^{a}\log{b} = \frac{1} {^{b}\log{a}}$
     \item $^{a}\log{\frac{1}{b}} = - ^{a}\log{b}$
 
@@ -178,14 +178,14 @@ Sifat-sifat:
 Definisi:
 
 \begin{center}
-\fbox{$\underset{n\rightarrow\infty}{\lim}{1+\frac{1}{n}^n}=e=2.7182818$}
+\fbox{$\underset{n\rightarrow\infty}{\lim}\left(1+\frac{1}{n}\right)^n=e=2.7182818...$}
 \end{center}
 \begin{itemize}
 \item Log dengan bilangan pokok e disebut logaritma natural
-$^{a}\log x = \ln x$ dibaca lon x; $\ln e=1; \ln 1 = 0$
+$^{e}\log x = \ln x$ dibaca lon x; $\ln e=1; \ln 1 = 0$
 \item Hubungan $\log$ dengan $\ln$:
 \vskip12pt
-\fbox{$\log x = 0.4345 \ln x; \ln x= 2.3028 \log x$}
+\fbox{$\log x = 0.4343 \ln x; \ln x= 2.3026 \log x$}
 \end{itemize}
 \end{frame}
 
@@ -240,7 +240,7 @@ $(a+b)^3=a^3+3a^2b+3ab^2+b^3$
 \\
 $(a+b)^4=a^4+4a^3b+6a^2b^2+4ab^3+b^4$
 \\
-$(a+b)^5=a^5+5a^4b+10a^4b^2+10a^2b^3+5ab^4+b^5$
+$(a+b)^5=a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5$
 \\
 dan seterusnya...
 \end{columns}
@@ -254,17 +254,17 @@ dan seterusnya...
 \begin{center} \fbox {$i=\sqrt{-1};\, i^2=-1$}
 \vskip12pt
 \begin{itemize}
-\item Bilangak kompleks: $z=a+bi$; $a=$ bagian real dari bilangan komplek z,
+\item Bilangan kompleks: $z=a+bi$; $a=$ bagian real dari bilangan komplek z,
                                     $b=$ bagian imaginer dari z.
 \item Ingat bahwa: $\sqrt{ab}=\sqrt{a}.\sqrt{b}$, sehingga: $\sqrt{-3}=\sqrt{-1}.\sqrt{3}=i\sqrt{3}$
 \\
 $\sqrt{-9}=\sqrt{-1}.\sqrt{9}=i\sqrt{9}=i.3=3i$
 \item Akar-akar dari PK: $x^2+x+1=0$ adalah:
 \vskip10pt
-$x_{1,2}=\cfrac{-1\pm\sqrt{1^2-4(1)}}{2}=\cfrac{-1\pm\sqrt{-3}}{2}=\cfrac{-1\pm\sqrt{-3}{i}}{2}$
-$x_{1}=\cfrac{-1}{2}+\cfrac{\sqrt{3}{i}}{2}$
+$x_{1,2}=\cfrac{-1\pm\sqrt{1^2-4(1)}}{2}=\cfrac{-1\pm\sqrt{-3}}{2}=\cfrac{-1\pm i\sqrt{3}}{2}$
+$x_{1}=\cfrac{-1}{2}+\cfrac{i\sqrt{3}}{2}$
 \hskip40pt
-$x_{2}=\cfrac{-1}{2}-\cfrac{\sqrt{3}{i}}{2}$
+$x_{2}=\cfrac{-1}{2}-\cfrac{i\sqrt{3}}{2}$
 \end{itemize}
 \end{center}
 \end{frame}
@@ -371,13 +371,13 @@ AF+AG=BF+BG\\
 \vskip10pt
 $PF=\sqrt{(x+c)^2+y^2}$ dan $PG=\sqrt{(x-c)^2+y^2}$
 \\
-$PF+PG=2a \rightarrow (a^2-c^2)x^2+a^2+y^2=a^2(a^2-c^2)$
+$PF+PG=2a \rightarrow (a^2-c^2)x^2+a^2 y^2=a^2(a^2-c^2)$
 \end{frame}
 
 \begin{frame}[t, fragile]{Ellips(Cont'd)}
 Misalkan: $a^2-c^2=b^2$ \\
 maka persamaan ellips:
-\fbox{$\cfrac{x^2}{z^2}+\cfrac{y^2}{b^2}=1$}  \hskip10pt 2a = Sb. panjang\\
+\fbox{$\cfrac{x^2}{a^2}+\cfrac{y^2}{b^2}=1$}  \hskip10pt 2a = Sb. panjang\\
                                              \hskip189pt 2b = Sb. pendek \\
 Jika pusat ellips ($\alpha,\beta$) dan sumbu-sumbu simetri tetap $//$ sb. x dan sb. y, maka persamaan ellipsnya:\\
 \begin{center}
@@ -397,20 +397,20 @@ $AG-AF= BF - BG $\\
 \hskip47pt$= (c+a) - (c-a)$\\ 
 \hskip47pt$= 2a$ \\
 P(x,y) pada hyperbola \\
-$PF = \sqrt{(x+y)^2 + y^2}$ \\
-$PG =\sqrt{x-c)^2+y^2}$\\
+$PF = \sqrt{(x+c)^2 + y^2}$ \\
+$PG =\sqrt{(x-c)^2+y^2}$\\
 \end{columns}
 \end{frame}
 
 \begin{frame}[t, fragile]{Hyperbola(Cont'd)}
-$PF - PG=2a \rightarrow (c^2 - a^2)x^2-a^2-y^2=a^2(c^2-a^2)$\\
+$PF - PG=2a \rightarrow (c^2 - a^2)x^2-a^2 y^2=a^2(c^2-a^2)$\\
 Misalkan: $c^2-a^2 = b^2$\\ 
 \vskip5pt
-Maka persamaan hyperbola: \fbox{$\cfrac{x^2}{z}^2-\cfrac{y^2}{b^2} = 1$}\\
+Maka persamaan hyperbola: \fbox{$\cfrac{x^2}{a^2}-\cfrac{y^2}{b^2} = 1$}\\
 \vskip5pt
-Jika pusat hyperbola ($\alpha, \beta$) dan sumbu-sumbu simetri tetap $//$ sumbu x dan sumbu y; maka persamaan parabolanya:\\
+Jika pusat hyperbola ($\alpha, \beta$) dan sumbu-sumbu simetri tetap $//$ sumbu x dan sumbu y; maka persamaan hiperbolanya:\\
 \begin{center}
-$\cfrac{(x-\alpha)^2}{a^2} - \cfrac{y^2}{b^2} = 1$\\
+$\cfrac{(x-\alpha)^2}{a^2} - \cfrac{(y-\beta)^2}{b^2} = 1$\\
 \end{center}
 Jika a = b; disebut hyperbola ORTHOGONAL (siku-siku).
 
@@ -437,7 +437,7 @@ Variabel y disebut fungsi dari variabel x jika dapat ditentukan hubungan anatara
                 \end{cases}$
 \begin{exampleblock}{Contoh:}
 $\vert 6 \vert = 6$; sebab $6 >0 $\\
-$\vert -5 \vert = -(-5)$; sebab $5 \geq 0$
+$\vert -5 \vert = -(-5)$; sebab $-5 < 0$
 \end{exampleblock}
 \end{itemize}
 \end{frame}
@@ -469,7 +469,7 @@ Definisi: \\
 \end{columns}
 \vskip10pt
 \begin{exampleblock}{Contoh:}
-1 radian = $\cfrac{360}{2\pi} = \cfrac{360^o}{2(3.14159)}=57^o:$ 7': 45"
+1 radian = $\cfrac{360}{2\pi} = \cfrac{360^o}{2(3.14159)}=57^o$ 17': 45"
 \end{exampleblock}
 \end{frame}
 
